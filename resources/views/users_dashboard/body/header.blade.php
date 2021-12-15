@@ -120,13 +120,12 @@
 			  </li>
 			</ul>
           </li>	
-		  <li>
+		  {{-- <li>
               <a id="buttonaudio" title="Let's Dance" class="waves-effect waves-light">
 				  <audio  autoplay src="{{asset('upload/music/aragmand.MP3')}}" type="audio/mpeg"></audio>
-				  {{-- <i class="glyphicon glyphicon-volume-off"></i> --}}
 				<i class="glyphicon glyphicon-volume-up"></i>
 			  </a>
-          </li>
+          </li> --}}
 			
         </ul>
       </div>
@@ -135,32 +134,7 @@
 
   <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
 
-  <script id="rendered-js" >
-	  window.addEventListener("DOMContentLoaded", event => {
-		const audio = document.querySelector("audio");
-		audio.volume = 0.2;
-		audio.play();
-		});
-	const button = document.querySelector("#buttonaudio");
-	const icon = document.querySelector("#buttonaudio > i");
-	const audio = document.querySelector("audio");
-	
-	button.addEventListener("click", () => {
-	  if (audio.paused) {
-		audio.volume = 0.2;
-		audio.play();
-		icon.classList.remove('glyphicon glyphicon-volume-up');
-		icon.classList.add('glyphicon glyphicon-volume-off');
-	
-	  } else {
-		audio.pause();
-		icon.classList.remove('glyphicon glyphicon-volume-off');
-		icon.classList.add('glyphicon glyphicon-volume-up');
-	  }
-	  button.classList.add("fade");
-	});
-	//# sourceURL=pen.js
-		</script>
+
 
 		
 	

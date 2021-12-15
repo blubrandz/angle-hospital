@@ -178,20 +178,20 @@ Route::prefix('userprofile')->group( function() {
 ///////////////COMPLETE PROFILE[ W E B S I T E ]/////////////////
 //********************************************************* *//
 
-Route::get('completeprofile', function () {
-    $id = Auth::user()->id ;
-    $user = User::find($id) ;
-return view('complete_profile.completeprofile' , compact('user'));
-})->name('completeprofile');
+// Route::get('completeprofile', function () {
+//     $id = Auth::user()->id ;
+//     $user = User::find($id) ;
+// return view('complete_profile.completeprofile' , compact('user'));
+// })->name('completeprofile');
 
-Route::prefix('completeprofile')->group( function() {
-    Route::post('/store' , [completeProfleCOntroller::class , 'userProfileCompleteStore'])->name('completeprofile.store') ;
+// Route::prefix('completeprofile')->group( function() {
+//     Route::post('/store' , [completeProfleCOntroller::class , 'userProfileCompleteStore'])->name('completeprofile.store') ;
 
-    //logout
-    Route::get('/logout' , [completeProfleCOntroller::class , 'userProfileCompleteLogout'])->name('completeprofile.logout') ;
+//     //logout
+//     Route::get('/logout' , [completeProfleCOntroller::class , 'userProfileCompleteLogout'])->name('completeprofile.logout') ;
 
 
-}) ;
+// }) ;
 
 
 

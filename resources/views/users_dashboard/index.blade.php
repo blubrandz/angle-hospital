@@ -18,7 +18,7 @@
                           </div>
                           <div>
                               {{-- <p class="text-mute mt-20 mb-0 font-size-16">New Customers</p> --}}
-                              <h3 class="text-white mb-0 font-weight-500">{{ $userDashboardUpcomingParty }} <small class="text-success"><i class="fa fa-caret-up"></i> Upcoming Party</small></h3>
+                              <h3 class="text-white mb-0 font-weight-500">hELLO <small class="text-success"><i class="fa fa-caret-up"></i> Upcoming Party</small></h3>
                           </div>
                       </div>
                   </div>
@@ -32,7 +32,7 @@
                           </div>
                           <div>
                               {{-- <p class="text-mute mt-20 mb-0 font-size-16">Sold Cars</p> --}}
-                              <h3 class="text-white mb-0 font-weight-500">{{$userDashboardMissedParty}} <small class="text-success"><i class="fa fa-caret-up"></i> Missed Party</small></h3>
+                              <h3 class="text-white mb-0 font-weight-500">hELLO <small class="text-success"><i class="fa fa-caret-up"></i> Missed Party</small></h3>
                           </div>
                       </div>
                   </div>
@@ -46,7 +46,7 @@
                           </div>
                           <div>
                               {{-- <p class="text-mute mt-20 mb-0 font-size-16">Sales Lost</p> --}}
-                              <h3 class="text-white mb-0 font-weight-500"> {{ $totalRequestYouMade }} <small class="text-danger"><i class="fa fa-caret-down"></i> Your total Request</small></h3>
+                              <h3 class="text-white mb-0 font-weight-500"> hELLO <small class="text-danger"><i class="fa fa-caret-down"></i> Your total Request</small></h3>
                           </div>
                       </div>
                   </div>
@@ -74,52 +74,7 @@
                                           <th style="min-width: 90px ; text-align:right"><span class="text-fade">Make A request</span></th>
                                       </tr>
                                   </thead>
-                                  <tbody>
-                                      {{-- <tr>										
-                                          <td class="pl-0 py-8">
-                                              <div class="d-flex align-items-center">
-                                                  <div class="flex-shrink-0 mr-20">
-                                                      <div class="bg-img h-50 w-50" style="background-image: url(../images/gallery/creative/img-1.jpg)"></div>
-                                                  </div>
-
-                                                  <div>
-                                                      <a href="#" class="text-white font-weight-600 hover-primary mb-1 font-size-16">Vivamus consectetur</a>
-                                                      <span class="text-fade d-block">Pharetra, Nulla , Nec, Aliquet</span>
-                                                  </div>
-                                              </div>
-                                          </td>
-                                          <td>
-                                              <span class="text-fade font-weight-600 d-block font-size-16">
-                                                  Paid
-                                              </span>
-                                              <span class="text-white font-weight-600 d-block font-size-16">
-                                                  $45,800k
-                                              </span>
-                                          </td>
-                                          <td>
-                                              <span class="text-fade font-weight-600 d-block font-size-16">
-                                                  Paid
-                                              </span>
-                                              <span class="text-white font-weight-600 d-block font-size-16">
-                                                  $45k
-                                              </span>
-                                          </td>
-                                          <td>
-                                              <span class="text-fade font-weight-600 d-block font-size-16">
-                                                  Sophia
-                                              </span>
-                                              <span class="text-white font-weight-600 d-block font-size-16">
-                                                  Pharetra
-                                              </span>
-                                          </td>
-                                          <td>
-                                              <span class="badge badge-primary-light badge-lg">Approved</span>
-                                          </td>
-                                          <td class="text-right">
-                                              <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-bookmark-plus"></span></a>
-                                              <a href="#" class="waves-effect waves-light btn btn-info btn-circle mx-5"><span class="mdi mdi-arrow-right"></span></a>
-                                          </td>
-                                      </tr> --}}
+                                  {{-- <tbody>
 
                                       @foreach ($UserDashboardPartyData as $item)
                                         <tr>										
@@ -159,7 +114,7 @@
                                         </tr>
                                       @endforeach
                                       
-                                  </tbody>
+                                  </tbody> --}}
                               </table>
                           </div>
                       </div>

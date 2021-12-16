@@ -7,9 +7,13 @@ use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\userdashboardController ;
 use App\Http\Controllers\userProfileController ;
 use Illuminate\Support\Facades\Auth ;
-use App\Models\User ;
+//patient
+use App\Http\Controllers\doctor\doctorDashboardController ;
+use App\Http\Controllers\doctor\doctorProfileManageController ;
 
 use Illuminate\Support\Facades\Artisan;
+use App\Models\User ;
+
 
 
 
@@ -164,8 +168,9 @@ Route::prefix('userprofile')->group( function() {
 }) ;
 
 
-
-
+//************************************************************ *//
+////////////////DOCTOR DASHBOARD ROUTING/////////////////////////
+//********************************************************* *////
 //************************************************************ *//
 ////////////////DOCTOR DASHBOARD ROUTING/////////////////////////
 //********************************************************* *////
@@ -174,6 +179,45 @@ Route::get('doctordashboard', function () {
     return view('doctor_dashboard.index');
 
 })->name('doctordashboard');
+
+//logout dunctionality of doctor dashboard
+Route::get('/doctordashboard/logout' , [doctorDashboardController::class , 'doctorDashboardLogout'])->name('doctordashboard.logout') ;
+
+//DOCTOR PROFILE MANAGEMENT 
+Route::prefix('doctorprofile')->group( function() {
+    Route::get('/view' , [doctorProfileManageController::class , 'doctorProfileViewProfile'])->name('doctorprofile.view') ;
+
+    //edit doctor profile 
+    Route::get('/edit' , [doctorProfileManageController::class , 'doctorProfileEditProfile'])->name('doctorprofile.edit') ;
+
+    //storing the edited data from edit page of doctor
+    Route::post('/store' , [doctorProfileManageController::class , 'doctorProfileUpdateDataStore'])->name('doctorprofile.store') ;
+
+    //change password of doctor dashboard 
+    Route::get('/doctorpassword/view' , [doctorProfileManageController::class , 'doctorProfileChangePassword'])->name('doctorpassword.view') ;
+
+    //updaating password of doctor 
+    Route::post('/doctorpassword/update' , [doctorProfileManageController::class , 'doctorProfileChangePasswordUpdate'])->name('doctorpassword.update') ;
+
+
+
+
+}) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -242,4 +286,3 @@ Route::get('receptiondashboard', function () {
 
 }); //preventing backlogin here [clearing backhistory here don't delete it and also  make routes under this not out side this closing tags]
 
-//durgesh bro

@@ -1,3 +1,10 @@
+<!--active sidbar menu functionality -->
+@php
+    $prefix = Request::route()->getprefix() ;
+    $route = Route::current()->getName() ;
+@endphp
+{{-- @dd($route) --}}
+<!--end active sidebar functionality here-->
 
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -19,12 +26,26 @@
       <!-- sidebar menu-->
       <ul class="sidebar-menu" data-widget="tree">  
 		  
-		<li>
-          <a href="index.html">
+		<li class="{{ ($route == 'doctordashboard')?'active':'' }}">
+          <a href="{{Route('doctordashboard')}}">
             <i data-feather="pie-chart"></i>
 			<span>Dashboard</span>
           </a>
         </li>  
+
+        <li class="treeview {{ ($prefix == '/doctorprofile')?"active":"" }}">
+          <a href="#">
+            <i data-feather="users"></i>
+            <span>Your Profile</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=" {{ Route('doctorprofile.view') }} "><i class="ti-more"></i>Profile</a></li>
+            <li><a href="{{ Route('doctorpassword.view') }} "><i class="ti-more"></i>Change Password</a></li>
+          </ul>
+        </li> 
 		
         <li class="treeview">
           <a href="#">

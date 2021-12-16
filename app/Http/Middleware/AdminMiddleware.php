@@ -19,16 +19,16 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->usertype == 'admin') {
-            return $next($request);
+            return $next($request);   //Admin 
         }
         elseif(Auth::user()->usertype == 'user') {
-            return redirect('userdashboard') ;
+            return redirect('userdashboard') ;   //patient dashboard
         }
         elseif(Auth::user()->usertype == 'doctor') {
-            return redirect('doctordashboard') ;
+            return redirect('doctordashboard') ;  //doctor
         }
         elseif(Auth::user()->usertype == 'reception') {
-            return redirect('receptiondashboard') ;
+            return redirect('receptiondashboard') ;  //reception
         }
         else {
             return redirect("completeprofile") ; //change the routing after registation here in future 

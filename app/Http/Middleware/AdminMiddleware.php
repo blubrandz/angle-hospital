@@ -24,6 +24,12 @@ class AdminMiddleware
         elseif(Auth::user()->usertype == 'user') {
             return redirect('userdashboard') ;
         }
+        elseif(Auth::user()->usertype == 'doctor') {
+            return redirect('doctordashboard') ;
+        }
+        elseif(Auth::user()->usertype == 'reception') {
+            return redirect('receptiondashboard') ;
+        }
         else {
             return redirect("completeprofile") ; //change the routing after registation here in future 
         }

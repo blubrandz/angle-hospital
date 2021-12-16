@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\UserController;
 use App\Http\Controllers\backend\ProfileController;
-use App\Http\Controllers\completeProfleCOntroller;
 use App\Http\Controllers\userdashboardController ;
 use App\Http\Controllers\userProfileController ;
 use Illuminate\Support\Facades\Auth ;
@@ -132,10 +131,8 @@ Route::prefix('profile')->group(function() {
 
 
 
-
-
 //************************************************************ *//
-////////////////USERS DASHBOARD ROUTING//////////////////////////
+////////////////PATIENT DASHBOARD ROUTING//////////////////////////
 //********************************************************* *//
 
 //loading user index page after login as user
@@ -169,37 +166,36 @@ Route::prefix('userprofile')->group( function() {
 
 
 
+//************************************************************ *//
+////////////////DOCTOR DASHBOARD ROUTING/////////////////////////
+//********************************************************* *////
+
+Route::get('doctordashboard', function () {
+    return view('doctor_dashboard.index');
+
+})->name('doctordashboard');
 
 
 
 
 
 //************************************************************ *//
-///////////////COMPLETE PROFILE[ W E B S I T E ]/////////////////
-//********************************************************* *//
+////////////////RECEPTION DASHBOARD ROUTING//////////////////////
+//********************************************************* *////
+Route::get('receptiondashboard', function () {
+    return view('reception_dashboard.index');
 
-// Route::get('completeprofile', function () {
-//     $id = Auth::user()->id ;
-//     $user = User::find($id) ;
-// return view('complete_profile.completeprofile' , compact('user'));
-// })->name('completeprofile');
-
-// Route::prefix('completeprofile')->group( function() {
-//     Route::post('/store' , [completeProfleCOntroller::class , 'userProfileCompleteStore'])->name('completeprofile.store') ;
-
-//     //logout
-//     Route::get('/logout' , [completeProfleCOntroller::class , 'userProfileCompleteLogout'])->name('completeprofile.logout') ;
+})->name('receptiondashboard');
 
 
-// }) ;
+
+
 
 
 
 //************************************************************ *//
 ///////////////Finally Website Route here[ARAGMA]////////////////
 //********************************************************* *//
-
-
 
 // Route::get('/cache' , function() {
 //     Artisan::Call('cache:clear') ;
@@ -245,3 +241,5 @@ Route::prefix('userprofile')->group( function() {
 
 
 }); //preventing backlogin here [clearing backhistory here don't delete it and also  make routes under this not out side this closing tags]
+
+//durgesh bro

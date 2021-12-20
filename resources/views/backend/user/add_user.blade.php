@@ -33,6 +33,9 @@
                                                 <option value="" selected="" disabled>Select Role</option>
                                                 <option value="Admin">Admin</option>
                                                 <option value="User">User</option>
+                                                <option value="doctor">doctor</option>
+                                                <option value="reception">reception</option>
+
 
                                             </select>
                                         </div>
@@ -155,7 +158,7 @@
                                       <div class="form-group">
                                           <h5>How you hear about our party <span class="text-danger">*</span></h5>
                                           <div class="controls">
-                                              <select name="hear_about_party" id="hear_about_party" required  class="form-control">
+                                              <select name="hear_about_party" id="hear_about_party"   class="form-control">
                                                   <option value="" selected="" disabled>---Select Any---</option>
                                                   <option value="Friends"  > Friends </option>
                                                   <option value="Newspaper" > Newspaper </option>

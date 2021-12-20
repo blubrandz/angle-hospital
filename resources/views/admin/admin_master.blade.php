@@ -23,6 +23,9 @@
  
   <script src="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.js"></script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+
      
   </head>
 
@@ -95,6 +98,8 @@
 
   <!--sweet alert cdn here-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
 
   <script type="text/javascript">
   $(function() {

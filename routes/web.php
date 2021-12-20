@@ -7,11 +7,14 @@ use App\Http\Controllers\backend\ProfileController;
 use App\Http\Controllers\userdashboardController ;
 use App\Http\Controllers\userProfileController ;
 use Illuminate\Support\Facades\Auth ;
-//patient
+use Illuminate\Support\Facades\Artisan;
+//admin dashboard
+use App\Http\Controllers\admin\manageDoctorController ;
+use App\Http\Controllers\admin\manageReceptionController ;
+//patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
-
-use Illuminate\Support\Facades\Artisan;
+//models
 use App\Models\User ;
 
 
@@ -76,6 +79,23 @@ function() {
 //Logout functionality here--
 Route::get('/admin/logout' , [AdminController::class , 'Logout'])->name('admin.logout') ;
 
+//
+//GROUP FOR YOUR PROFILE AND CHAANGE PASSWORD 
+//
+Route::prefix('profile')->group(function() {
+    //view Route for Users
+    Route::get('/view' , [ProfileController::class , 'ProfileView'])->name('profile.view') ; 
+
+    //EDIT profile
+    Route::get('/edit' , [ProfileController::class , 'ProfileEdit'])->name('profile.edit') ;   
+
+    Route::post('/store' , [ProfileController::class , 'ProfileStore'])->name('profile.store') ;   
+
+    //Update Password OR change Password
+    Route::get('/password/view' , [ProfileController::class , 'PasswordView'])->name('password.view') ;   
+
+    Route::post('/password/update' , [ProfileController::class , 'PasswordUpdate'])->name('password.update') ;   
+}) ;
 
 //  USER MANAGMENT ALL ROUTES WILL BE HERE
 //group for users[xyz]<=-=URLS
@@ -114,27 +134,53 @@ Route::prefix('users')->group(function() {
 
 }) ;
 
+//managing doctors here
+Route::prefix('doctors')->group(function() {
+    //adding doctors doctors.add
+    Route::get('/add' , [manageDoctorController::class , 'AddDoctor'])->name('doctors.add') ;   //user view
+
+    //Storing the add doctor data
+    Route::post('/store' , [manageDoctorController::class , 'storeDoctorData'])->name('doctors.store') ;   //user store 
+
+    //view all doctore
+    Route::get('/view' , [manageDoctorController::class , 'ViewDoctors'])->name('doctors.view') ;   //user view
+
+    //edit doctors
+    Route::get('/edit/{id}' , [manageDoctorController::class , 'EditDoctors'])->name('doctors.edit') ;   //user edit
+
+    //updatee doctor here
+    Route::post('/update/{id}' , [manageDoctorController::class , 'UpdateDoctors'])->name('doctors.update') ;   //user update
+
+    //delete doctores here
+    Route::get('/delete/{id}' , [manageDoctorController::class , 'DeleteDoctors'])->name('doctors.delete') ;   //user edit
+}) ;
+
+
 //
-//GROUP FOR YOUR PROFILE AND CHAANGE PASSWORD 
-//
-Route::prefix('profile')->group(function() {
-    //view Route for Users
-    Route::get('/view' , [ProfileController::class , 'ProfileView'])->name('profile.view') ; 
+//manage reptionist here
+Route::prefix('reception')->group(function() {
+    //add reseptionsit here
+    Route::get('/add' , [manageReceptionController::class , 'AddReceptionist'])->name('reception.add') ;   //user view
 
-    //EDIT profile
-    Route::get('/edit' , [ProfileController::class , 'ProfileEdit'])->name('profile.edit') ;   
+    //store
+    Route::post('/store' , [manageReceptionController::class , 'StoreReceptionist'])->name('reception.store') ;   //user view
 
-    Route::post('/store' , [ProfileController::class , 'ProfileStore'])->name('profile.store') ;   
+    Route::get('/view' , [manageReceptionController::class , 'ViewReceptionist'])->name('reception.view') ;   //reception view
 
-    //Update Password OR change Password
-    Route::get('/password/view' , [ProfileController::class , 'PasswordView'])->name('password.view') ;   
+    Route::get('/edit/{id}' , [manageReceptionController::class , 'EditReceptionist'])->name('reception.edit') ;   //reception edit
 
-    Route::post('/password/update' , [ProfileController::class , 'PasswordUpdate'])->name('password.update') ;   
+    Route::post('/update/{id}' , [manageReceptionController::class , 'UpdateReceptionist'])->name('reception.update') ;   //reception edit
+
+    Route::get('/delete/{id}' , [manageReceptionController::class , 'DeleteReceptionist'])->name('reception.delete') ;   //reception edit
+
 }) ;
 
 
 
 
+//************************************************************ *//
+////////////////PATIENT DASHBOARD ROUTING//////////////////////////
+//********************************************************* *//
 //************************************************************ *//
 ////////////////PATIENT DASHBOARD ROUTING//////////////////////////
 //********************************************************* *//
@@ -177,7 +223,6 @@ Route::prefix('userprofile')->group( function() {
 
 Route::get('doctordashboard', function () {
     return view('doctor_dashboard.index');
-
 })->name('doctordashboard');
 
 //logout dunctionality of doctor dashboard
@@ -198,8 +243,6 @@ Route::prefix('doctorprofile')->group( function() {
 
     //updaating password of doctor 
     Route::post('/doctorpassword/update' , [doctorProfileManageController::class , 'doctorProfileChangePasswordUpdate'])->name('doctorpassword.update') ;
-
-
 
 
 }) ;

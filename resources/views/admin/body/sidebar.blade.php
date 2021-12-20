@@ -29,24 +29,7 @@
 			<span>Dashboard</span>
           </a>
         </li>  
-		
-        <li class="treeview {{ ($prefix == '/users')?'active':'' }} " >
-          <a href="#">
-            <i data-feather="message-circle"></i>
-            <span>Manage User</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('user.view')}} "><i class="ti-more"></i>View User</a></li>
-            <li><a href="{{ route('users.add') }} "><i class="ti-more"></i>Add User</a></li>
-            <li> <a href="{{ route('user.managerequest') }} "><i class="ti-more"></i> Manage Request </a> </li>
-            <li> <a href=" {{ Route('user.inactiveusers') }} "><i class="ti-more"></i> Inactive User </a> </li>
 
-          </ul>
-        </li> 
-		  
         <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
           <a href="#">
             <i data-feather="mail"></i> <span>Manage Profile</span>
@@ -60,8 +43,63 @@
           </ul>
         </li>
 
+		
+        <li class="treeview {{ ($prefix == '/users')?'active':'' }} " >
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Manage User</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('user.view')}} "><i class="ti-more"></i>View User</a></li>
+            <li><a href="{{ route('users.add') }} "><i class="ti-more"></i>Add User</a></li>
+            {{-- <li> <a href="{{ route('user.managerequest') }} "><i class="ti-more"></i> Manage Request </a> </li> --}}
+            {{-- <li> <a href=" {{ Route('user.inactiveusers') }} "><i class="ti-more"></i> Inactive User </a> </li> --}}
 
+          </ul>
+        </li> 
 
+        <li class="treeview {{ ($prefix == '/doctors')?'active':'' }}">
+          <a href="#">
+            <i data-feather="users"></i> <span>Manage Doctors</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=" {{route('doctors.add')}} "><i class="ti-more"></i>Add Doctors</a></li>
+            <li><a href=" {{route('doctors.view')}} "><i class="ti-more"></i>View Doctors</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview  {{ ($prefix == '/reception')?'active':'' }}">
+          <a href="#">
+            <i data-feather="users"></i> <span>Manage Receptionist</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href=" {{route('reception.add')}} "><i class="ti-more"></i>Add Receptionist</a></li>
+            <li><a href=" {{route('reception.view')}}  "><i class="ti-more"></i>View Receptionist</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="users"></i> <span>Manage Patient</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Add Patient</a></li>
+            <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Patient</a></li>
+          </ul>
+        </li>
+		  
 
         {{-- <li class="treeview">
           <a href="#">
@@ -77,7 +115,20 @@
           </ul>
         </li> --}}
 		  
-		<li class="header nav-small-cap">EXTRA</li>		  
+		<li class="header nav-small-cap">EXTRA</li>	
+    
+            <li class="treeview">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Logo</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Upload Logo</a></li>
+          </ul>
+        </li>
+
 		  
 		<li>
           <a href="{{Route('admin.logout')}}">

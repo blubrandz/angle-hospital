@@ -44,7 +44,7 @@
         </li>
 
 		
-        <li class="treeview {{ ($prefix == '/users')?'active':'' }} " >
+        {{-- <li class="treeview {{ ($prefix == '/users')?'active':'' }} " >
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Manage User</span>
@@ -55,11 +55,12 @@
           <ul class="treeview-menu">
             <li><a href="{{route('user.view')}} "><i class="ti-more"></i>View User</a></li>
             <li><a href="{{ route('users.add') }} "><i class="ti-more"></i>Add User</a></li>
-            {{-- <li> <a href="{{ route('user.managerequest') }} "><i class="ti-more"></i> Manage Request </a> </li> --}}
-            {{-- <li> <a href=" {{ Route('user.inactiveusers') }} "><i class="ti-more"></i> Inactive User </a> </li> --}}
 
           </ul>
-        </li> 
+        </li>  --}}
+
+        <li class="header nav-small-cap">STAFF MANAGMENT</li>	
+
 
         <li class="treeview {{ ($prefix == '/doctors')?'active':'' }}">
           <a href="#">
@@ -87,55 +88,61 @@
           </ul>
         </li>
 
-        <li class="treeview">
+        <li class="header nav-small-cap">DISEASE SECTION</li>	
+
+        <li class="treeview {{ ($prefix == '/diseasecatagory')?'active':'' }}">
           <a href="#">
-            <i data-feather="users"></i> <span>Manage Patient</span>
+            <i data-feather="mail"></i> <span>Disease Catagory</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Add Patient</a></li>
-            <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Patient</a></li>
+            <li><a href="{{route('diseasecatagory.add')}}"><i class="ti-more"></i>Add Catagory</a></li>
+            <li><a href="{{route('diseasecatagory.view')}}"><i class="ti-more"></i>View Catagory</a></li>
           </ul>
         </li>
-		  
 
-        {{-- <li class="treeview">
+
+        <li class="treeview {{ ($prefix == '/disease')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Mailbox</span>
+            <i data-feather="plus-square"></i> <span>Disease Management</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Inbox</a></li>
-            <li><a href="mailbox_compose.html"><i class="ti-more"></i>Compose</a></li>
-            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>Read</a></li>
+            <li><a href=" {{route('disease.add')}} "><i class="ti-more"></i>Add Disease</a></li>
+            <li><a href=" {{route('disease.view')}} "><i class="ti-more"></i>View Disease</a></li>
           </ul>
-        </li> --}}
+        </li>
+
+        
+
+
 		  
-		<li class="header nav-small-cap">EXTRA</li>	
-    
+		        <li class="header nav-small-cap">EXTRA</li>	
+
             <li class="treeview">
-          <a href="#">
-            <i data-feather="mail"></i> <span>Logo</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-right pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Upload Logo</a></li>
-          </ul>
-        </li>
-
+              <a href="#">
+                <i data-feather="mail"></i> <span>Mailbox</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-right pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Inbox</a></li>
+                <li><a href="mailbox_compose.html"><i class="ti-more"></i>Compose</a></li>
+                <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>Read</a></li>
+              </ul>
+            </li>
 		  
-		<li>
-          <a href="{{Route('admin.logout')}}">
-            <i data-feather="lock"></i>
-			<span>Log Out</span>
-          </a>
-        </li> 
+            <li>
+                  <a href="{{Route('admin.logout')}}">
+                    <i data-feather="lock"></i>
+                    <span>Log Out</span>
+                  </a>
+            </li> 
         
       </ul>
     </section>

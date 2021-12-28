@@ -20,6 +20,8 @@
              <div class="box">
                <div class="box-header with-border">
                  <h4 class="box-title">Add Receptionist</h4>
+                 <a href=" {{ route('reception.view') }} " class="btn btn-rounded btn-success md-5" style="float: right"> View Receptionist </a>
+
                  <h6 class="box-subtitle"><a class="text-warning" href=""> ( * ) </a> Star Maked field are mendatory to fill </h6>
                </div>
                <!-- /.box-header -->

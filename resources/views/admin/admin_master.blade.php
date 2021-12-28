@@ -71,6 +71,9 @@
 	<script src="{{ asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js') }}"></script>
 	<script src="{{ asset('backend/js/pages/editor.js') }}"></script>
   <script src="{{asset('../assets/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js')}}"></script>
+  <script src="{{asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js')}}"></script>
+
+
 
   <script src="{{asset('../assets/vendor_components/select2/dist/js/select2.full.js')}}"></script>
 	<script src="{{asset('../assets/vendor_plugins/input-mask/jquery.inputmask.js')}}"></script>
@@ -102,32 +105,32 @@
   
 
   <script type="text/javascript">
-  $(function() {
-    $(document).on('click' , '#delete' ,function(e) {
-      e.preventDefault() ;
-      var link = $(this).attr("href") ;
-      //sweetalert 
-        Swal.fire({
-          title: 'Are you sure?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
-          if (result.isConfirmed) {
-            window.location.href = link
-            Swal.fire(
-              'Deleted!',
-              'Your file has been deleted.',
-              'success'
-            )
-          }
-        })
-      //sweetalert
-    }) ;
-  })
+      $(function() {
+        $(document).on('click' , '#delete' ,function(e) {
+          e.preventDefault() ;
+          var link = $(this).attr("href") ;
+          //sweetalert 
+            Swal.fire({
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = link
+                Swal.fire(
+                  'Deleted!',
+                  'Your file has been deleted.',
+                  'success'
+                )
+              }
+            })
+          //sweetalert
+        }) ;
+      })
   </script>
 
 

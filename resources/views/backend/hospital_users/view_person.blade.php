@@ -18,7 +18,7 @@
            <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title">Doctor List</h3>
-                <a href=" {{ route('users.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add User </a>
+                <a href=" {{ route('doctors.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add Doctor </a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -31,7 +31,9 @@
                               <th>Name</th>
                               <th>Email</th>
                               <th> Phone number </th>
-                              <th> Role </th>
+                              <th> Address </th>
+                              <th> Birth Date </th>
+                              <th> Gender </th>
                               <th >Action</th>
                           </tr>
                       </thead>
@@ -39,22 +41,17 @@
                         @foreach ($allData as $key => $user)
                           <tr>
                               <td> {{$key+1}} </td>
-                              <td> {{$user->usertype}} </td>
-                              <td> {{$user->name}} </td>
-                              <td> {{$user->email}} </td>
-                              <td> {{$user->mobile}} </td>
-
                               <td>
                                 <span {{Route('users.userapprove',$user->id)}} ><span class="badge badge-lg badge-info" style="background: @if ($user->usertype ==null)
                                   gray 
-                              @elseif($user->usertype == 'user')
-                                  green
-                              @elseif($user->usertype == 'doctor')
-                                  green
+                                @elseif($user->usertype == 'user')
+                                    green
+                                @elseif($user->usertype == 'doctor')
+                                    green
 
-                              @else
-                                  red
-                              @endif "> 
+                                @else
+                                    red
+                                @endif "> 
                                 @if ($user->usertype ==null)
                                     Unidentified user type 
                                 @elseif($user->usertype == 'user')
@@ -69,10 +66,17 @@
                                 </span></span>
 
                               </td>
+                              <td> {{$user->name }} </td>
+                              <td> {{$user->email }} </td>
+                              <td> {{$user->mobile }} </td>
+                              <td> {{$user->address == null?"N/A":$user->address }} </td>
+                              <td> {{$user->birth_date == null?"N/A":$user->birth_date }} </td>
+                              <td> {{$user->gender== null?"N/A":$user->gender}} </td>
+
                               <td>
                                 <!--button here-->
-                                <a class="btn btn-success" href=" {{Route('users.viewuserprofile',$user->id)}} ">View User Profile</a>
-                                &nbsp;&nbsp;
+                                {{-- <a class="btn btn-success" href=" {{Route('users.viewuserprofile',$user->id)}} ">View User Profile</a>
+                                &nbsp;&nbsp; --}}
                                 <a class="btn btn-info" href=" {{Route('doctors.edit',$user->id)}} ">Edit</a>
                                 &nbsp;&nbsp;
                                 <a class="btn btn-danger" href=" {{Route('doctors.delete',$user->id)}}" id="delete">Delete</a>

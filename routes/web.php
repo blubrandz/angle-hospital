@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Artisan;
 //admin dashboard
 use App\Http\Controllers\admin\manageDoctorController ;
 use App\Http\Controllers\admin\manageReceptionController ;
+use App\Http\Controllers\admin\diseaseManagementController ;
+use App\Http\Controllers\admin\diseaseCatagoryManagmentController ;
 //patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
@@ -172,6 +174,50 @@ Route::prefix('reception')->group(function() {
     Route::post('/update/{id}' , [manageReceptionController::class , 'UpdateReceptionist'])->name('reception.update') ;   //reception edit
 
     Route::get('/delete/{id}' , [manageReceptionController::class , 'DeleteReceptionist'])->name('reception.delete') ;   //reception edit
+
+}) ;
+
+//
+//
+//DISEASE MANAGMENT HERE
+//
+//
+Route::prefix('disease')->group(function() {
+    //add disease here
+    Route::get('/add' , [diseaseManagementController::class , 'AddDisease'])->name('disease.add') ;   //disease add
+
+    //store
+    Route::post('/store' , [diseaseManagementController::class , 'storeDisease'])->name('disease.store') ;   //disease Store
+
+    //view disease ViewDisease
+    Route::get('/view' , [diseaseManagementController::class , 'ViewDisease'])->name('disease.view') ;   //disease View Disease
+
+    //disease details
+    Route::get('/details/{id}' , [diseaseManagementController::class , 'DetailViewDisease'])->name('disease.details') ;   //disease Details view
+
+    //disease Edit
+    Route::get('/edit/{id}' , [diseaseManagementController::class , 'EditDisease'])->name('disease.edit') ;   //disease Edit
+
+    //update disease
+    Route::post('/update/{id}' , [diseaseManagementController::class , 'UpdateDisease'])->name('disease.update') ;   //disease Update
+
+    //Delete disease
+    Route::get('/delete/{id}' , [diseaseManagementController::class , 'DeleteDisease'])->name('disease.delete') ;   //disease Edit
+}) ;
+
+//
+//manage the disease main catagory here
+//
+Route::prefix('diseasecatagory')->group(function() {
+    //adding disease catagory
+    Route::get('/add' , [diseaseCatagoryManagmentController::class , 'AddDiseaseCatagory'])->name('diseasecatagory.add') ;
+
+    //store the data of disease catagory
+    Route::post('/store' , [diseaseCatagoryManagmentController::class , 'StoreDiseaseCatagory'])->name('diseasecatagory.store') ;
+
+    //view all disease cataogy here
+    Route::get('/view' , [diseaseCatagoryManagmentController::class , 'ViewDiseaseCatagory'])->name('diseasecatagory.view') ;
+
 
 }) ;
 

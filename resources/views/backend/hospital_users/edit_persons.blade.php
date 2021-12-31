@@ -27,27 +27,32 @@
                             <div class="row">
                                 <div class="col-md-12"><!--col-6 stared here-->
                                     <div class="form-group">
-                                        <h5> Role <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <select name="usertype" style="background:#6a425c ; " id="select" required  class="form-control">
-                                                <option value="" selected="" disabled>Select Role</option>
-                                                <option value="Admin" {{ $editData->usertype == "Admin" ? "Selected": "" }} >Admin</option>
-                                                <option value="User" {{ $editData->usertype == "doctor" ? "Selected": "" }}  >Doctor</option>
-                                                <option value="User" {{ $editData->usertype == "reception" ? "Selected": "" }}  >Reception</option>
-                                                <option value="User" {{ $editData->usertype == "User" ? "Selected": "" }}  >Patient</option>
+                                            <input type="text" value="doctor" name="usertype" class="form-control" hidden required> </div>
+                                    </div>
+                                </div><!--col-6 Ended here-->
+                            </div>
+                            <!--row Ended here-->
 
+                            
+
+                            <!--row Stared here-->
+                            <div class="row">
+
+                                <div class="col-md-12"><!--col-6 stared here-->
+                                    <div class="form-group">
+                                        <h5>Select Specility <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <select name="doctor_specilist" id="doctor_specilist"   class="form-control">
+                                                <option value="" hidden> ----Select Specility ---- </option>
+                                                @foreach ($data as $specility)
+                                                    <option value=" {{ $specility->specility_name }}" {{ $editData->doctor_specilist == $specility->specility_name?"selected":"" }}>{{ $specility->specility_name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
                                 </div><!--col-6 Ended here-->
 
-                                
-
-                            </div>
-                            <!--row Ended here-->
-
-                            <!--row Stared here-->
-                            <div class="row">
 
                                 <div class="col-md-6"><!--col-6 stared here-->
                                     <div class="form-group">

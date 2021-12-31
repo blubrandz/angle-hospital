@@ -13,9 +13,13 @@ use App\Http\Controllers\admin\manageDoctorController ;
 use App\Http\Controllers\admin\manageReceptionController ;
 use App\Http\Controllers\admin\diseaseManagementController ;
 use App\Http\Controllers\admin\diseaseCatagoryManagmentController ;
+use App\Http\Controllers\admin\manageDoctorSpecilityController ;
 //patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
+//Doctor Dashboard
+use App\Http\Controllers\doctor\manageDoctorDaysController ;
+use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
 //models
 use App\Models\User ;
 
@@ -135,6 +139,28 @@ Route::prefix('users')->group(function() {
 
 
 }) ;
+
+//manage doctor specility doctorspecility
+Route::prefix('doctorspecility')->group(function() {
+    //add doctor specility here
+    Route::get('/add' , [manageDoctorSpecilityController::class , 'addDoctorSpecility'])->name('doctorspecility.add') ;  
+
+    //store the specility 
+    Route::post('/store' , [manageDoctorSpecilityController::class , 'StoreDoctorSpecility'])->name('doctorspecility.store') ;  
+
+    //view the specility here
+    Route::get('/view' , [manageDoctorSpecilityController::class , 'ViewDoctorSpecility'])->name('doctorspecility.view') ;  
+
+    //edit the specility here 
+    Route::get('/edit/{id}' , [manageDoctorSpecilityController::class , 'EditDoctorSpecility'])->name('doctorspecility.edit') ;  
+
+    //update edited data
+    Route::post('/update/{id}' , [manageDoctorSpecilityController::class , 'UpdateDoctorSpecility'])->name('doctorspecility.update') ;  
+
+    //delete the specility here
+    Route::get('/delete/{id}' , [manageDoctorSpecilityController::class , 'DeleteDoctorSpecility'])->name('doctorspecility.delete') ;  
+
+});
 
 //managing doctors here
 Route::prefix('doctors')->group(function() {
@@ -260,6 +286,20 @@ Route::prefix('userprofile')->group( function() {
 }) ;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //************************************************************ *//
 ////////////////DOCTOR DASHBOARD ROUTING/////////////////////////
 //********************************************************* *////
@@ -274,6 +314,7 @@ Route::get('doctordashboard', function () {
 //logout dunctionality of doctor dashboard
 Route::get('/doctordashboard/logout' , [doctorDashboardController::class , 'doctorDashboardLogout'])->name('doctordashboard.logout') ;
 
+//
 //DOCTOR PROFILE MANAGEMENT 
 Route::prefix('doctorprofile')->group( function() {
     Route::get('/view' , [doctorProfileManageController::class , 'doctorProfileViewProfile'])->name('doctorprofile.view') ;
@@ -290,8 +331,40 @@ Route::prefix('doctorprofile')->group( function() {
     //updaating password of doctor 
     Route::post('/doctorpassword/update' , [doctorProfileManageController::class , 'doctorProfileChangePasswordUpdate'])->name('doctorpassword.update') ;
 
+}) ;
+
+//
+//manage time slotes for doctors
+//
+Route::prefix('doctorday')->group( function() {
+    //adding day page
+    Route::get('/add' , [manageDoctorDaysController::class , 'AddManageDoctorDays'])->name('doctorday.add') ;
+
+    //store the date
+    Route::post('/store' , [manageDoctorDaysController::class , 'StoreManageDoctorDays'])->name('doctorday.store') ;
+
+    //view dates here
+    Route::get('/view' , [manageDoctorDaysController::class , 'ViewManageDoctorDays'])->name('doctorday.view') ;
+
+    //upcoming appointment dates
+    Route::get('/viewupcomingdate' , [manageDoctorDaysController::class , 'ViewUpcomingManageDoctorDays'])->name('doctorday.viewupcomingdate') ;
+
+    //passed appointment dates
+    Route::get('/viewpasseddate' , [manageDoctorDaysController::class , 'ViewPassedAppointmentManageDoctorDays'])->name('doctorday.viewpasseddate') ;
+
+    //delete the date
+    Route::get('/delete/{id}' , [manageDoctorDaysController::class , 'DeleteManageDoctorDays'])->name('doctorday.delete') ;
+});
+
+//
+//MANAGE TIME SLOT FOR DOCTORES HERE  doctor_timeslot
+// 
+Route::prefix('doctortimeslots')->group( function() {
+    //add timeslots
+    Route::get('/add' , [manageDoctorTimeSlotController::class , 'AddManageDoctorTimeSlot'])->name('doctortimeslots.add') ;
 
 }) ;
+
 
 
 

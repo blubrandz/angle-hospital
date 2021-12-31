@@ -44,6 +44,20 @@
 
                                 <div class="col-md-12"><!--col-6 stared here-->
                                     <div class="form-group">
+                                        <h5>Select Specility <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <select name="doctor_specilist" id="doctor_specilist"   class="form-control">
+                                                <option value="" hidden> ----Select Specility ---- </option>
+                                                @foreach ($data as $specility)
+                                                    <option value=" {{ $specility->specility_name }} ">{{ $specility->specility_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!--col-6 Ended here-->
+
+                                <div class="col-md-12"><!--col-6 stared here-->
+                                    <div class="form-group">
                                         <h5>Name <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="name" class="form-control" required> </div>

@@ -5,12 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User ;
+use App\Models\speciality ;
 
 class manageDoctorController extends Controller
 {
     //adding doctors here
     public function AddDoctor() {
-        return view('backend.hospital_users.add_person');
+        $data = speciality::all() ;
+        return view('backend.hospital_users.add_person' , compact(['data']));
     }
 
     //storing the dcotor data
@@ -22,6 +24,7 @@ class manageDoctorController extends Controller
 
         $data = new User() ;
         $data->usertype = $request->usertype ;
+        $data->doctor_specilist = $request->doctor_specilist;
         $data->name = $request->name ;
         $data->email = $request->email ;
         $data->password = bcrypt($request->password);
@@ -54,13 +57,16 @@ class manageDoctorController extends Controller
     //edit doctors 
     public function EditDoctors($id) {
         $editData = User::find($id) ;
-        return view('backend.hospital_users.edit_persons' , compact('editData')) ;
+        $data = speciality::all() ;
+
+        return view('backend.hospital_users.edit_persons' , compact('editData' , 'data')) ;
     }
 
     //updating the doctor data here
     public function UpdateDoctors(Request $request,$id) {
         $data = User::find($id) ;
         $data->usertype = $request->usertype ;
+        $data->doctor_specilist = $request->doctor_specilist ;
         $data->name = $request->name ;
         $data->email = $request->email ;
         $data->mobile = $request->mobile ;

@@ -29,6 +29,8 @@
                               <th width="5%">SL</th>
                               <th>Role</th>
                               <th>Name</th>
+                              <th> Specility </th>
+
                               <th>Email</th>
                               <th> Phone number </th>
                               <th> Address </th>
@@ -66,7 +68,9 @@
                                 </span></span>
 
                               </td>
-                              <td> {{$user->name }} </td>
+                              <td style="font-weight: bold"> {{Str::title($user->name) }} </td>
+                              <td> {{$user->doctor_specilist}} </td>
+
                               <td> {{$user->email }} </td>
                               <td> {{$user->mobile }} </td>
                               <td> {{$user->address == null?"N/A":$user->address }} </td>

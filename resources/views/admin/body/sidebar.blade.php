@@ -61,6 +61,19 @@
 
         <li class="header nav-small-cap">STAFF MANAGMENT</li>	
 
+        <li class="treeview {{ ($prefix == '/doctorspecility')?'active':'' }}">
+          <a href="#">
+            <i data-feather="anchor"></i> <span>Manage Doctor Specility</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('doctorspecility.add')}}"><i class="ti-more"></i>Add Specility</a></li>
+            <li><a href="{{route('doctorspecility.view')}}"><i class="ti-more"></i>View Speciality</a></li>
+          </ul>
+        </li>
+
 
         <li class="treeview {{ ($prefix == '/doctors')?'active':'' }}">
           <a href="#">

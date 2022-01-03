@@ -1,5 +1,5 @@
-@extends('doctor_dashboard.doctor_master')
-@section('doctor')
+@extends('users_dashboard.user_master')
+@section('user')
 
 @php
     $prefix = Request::route()->getprefix() ;
@@ -24,7 +24,7 @@
             <!-- Basic Forms -->
              <div class="box">
                <div class="box-header with-border">
-                <a href=" {{ route('doctortimeslots.view') }} " class="btn btn-rounded btn-success md-5" style="float: right"> View All timeslot </a>
+                <a href=" {{ route('patientappointment.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> View All Your Appointment Booking </a>
                  <h3 class="box-title">Add Your Day & Time Schedule</h3>
 
                  {{-- <h6 class="box-subtitle"><a class="text-warning" href=""> ( * ) </a> Star Maked field are mendatory to fill </h6> --}}
@@ -59,6 +59,42 @@
                               <div class="row">
                                 <div class="col-md-12"><!--col-6 stared here-->
                                     <div class="form-group">
+                                        <h5>Select Doctor </h5>
+                                        <div class="controls">
+                                            <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
+                                                <option value="" selected="" disabled>----Select Doctor----</option>
+                                                @foreach ($doctorList as $item)
+                                                <option value="{{ $item->name }}"> {{ $item->name }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!--col-6 Ended here-->
+                              </div>
+                              <!--row end-->
+
+                              <!--row start-->
+                              <div class="row">
+                                <div class="col-md-12"><!--col-6 stared here-->
+                                    <div class="form-group">
+                                        <h5>Select Date </h5>
+                                        <div class="controls">
+                                            <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
+                                                <option value="" selected="" disabled>----Select Date----</option>
+                                                @foreach ($dateData as $item)
+                                                <option value="{{ $item->date_appointmentdate }}"> {{ date('jS F Y' , strToTime($item->date_appointmentdate)) }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!--col-6 Ended here-->
+                              </div>
+                              <!--row end-->
+
+                              <!--row start-->
+                              <div class="row">
+                                <div class="col-md-12"><!--col-6 stared here-->
+                                    <div class="form-group">
                                         <h5>Select Timeslot </h5>
                                         <div class="controls">
                                             <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
@@ -70,7 +106,6 @@
                                         </div>
                                     </div>
                                 </div><!--col-6 Ended here-->
-
                               </div>
                               <!--row end-->
 

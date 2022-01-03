@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href=" {{asset('backend/images/faviconnew.png')}} ">
 
-    <title>Aragma - Registration </title>
+    <title>Angle Fertility - Registration </title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('backend/css/vendors_css.css')}}">
@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="hold-transition theme-primary bg-dark">
+<body class="hold-transition theme-primary bg-light">
 	
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">

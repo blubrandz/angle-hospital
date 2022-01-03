@@ -19,7 +19,7 @@
      
   </head>
 
-<body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
+<body class="hold-transition light-skin sidebar-mini theme-primary fixed">
 	
 <div class="wrapper">
 
@@ -330,6 +330,11 @@
 <script src="{{asset('../assets/vendor_components/fullcalendar/fullcalendar.min.js')}}"></script>
 <script src="{{asset('backend/js/pages/calendar.js')}}"></script>
 
+<!--time picker-->
+<script src="{{asset('../assets/vendor_components/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('../assets/vendor_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')}}"></script>
+<script src="{{asset('../assets/vendor_plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+<script src="{{asset('../assets/vendor_plugins/iCheck/icheck.min.js')}}"></script>
 
 
 

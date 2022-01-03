@@ -17,6 +17,7 @@ use App\Http\Controllers\admin\manageDoctorSpecilityController ;
 //patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
+use App\Http\Controllers\patient\ManagePatientAppointmentController ;
 //Doctor Dashboard
 use App\Http\Controllers\doctor\manageDoctorDaysController ;
 use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
@@ -285,13 +286,14 @@ Route::prefix('userprofile')->group( function() {
     Route::post('/userpassword/update' , [userProfileController::class , 'userPasswordUpdate'])->name('userpassword.update') ;
 }) ;
 
+///
+//MANAGE APPOINTMENT
+//
+Route::prefix('patientappointment')->group( function() {
+    //add appointment
+    Route::get('/add' , [ManagePatientAppointmentController::class , 'AddManagePatientAppointment'])->name('patientappointment.add') ;
 
-
-
-
-
-
-
+});
 
 
 
@@ -362,6 +364,16 @@ Route::prefix('doctorday')->group( function() {
 Route::prefix('doctortimeslots')->group( function() {
     //add timeslots
     Route::get('/add' , [manageDoctorTimeSlotController::class , 'AddManageDoctorTimeSlot'])->name('doctortimeslots.add') ;
+
+    //store the time slot here
+    Route::post('/store' , [manageDoctorTimeSlotController::class , 'StoreManageDoctorTimeSlot'])->name('doctortimeslots.store') ;
+
+    //view the time slots 
+    Route::get('/view' , [manageDoctorTimeSlotController::class , 'ViewManageDoctorTimeSlot'])->name('doctortimeslots.view') ;
+
+    //delete the timeslot 
+    Route::get('/delete/{id}' , [manageDoctorTimeSlotController::class , 'DeleteManageDoctorTimeSlot'])->name('doctortimeslots.delete') ;
+
 
 }) ;
 

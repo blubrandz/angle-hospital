@@ -2553,7 +2553,7 @@ Margin property
   border-right: 0;
   border-radius: 10px 0px 0px 10px; }
 .rtl .form-control + .input-group-addon:not(:first-child) {
-  border-left: 1px solid #475f7b; }
+  border-left: 1px solid #000000; }
 .rtl .gap-items > *:last-child, .rtl .gap-items-3 > *:last-child, .rtl .gap-items-4 > *:last-child, .rtl .gap-items-5 > *:last-child {
   margin-left: 0;
   margin-right: inherit; }
@@ -2605,7 +2605,7 @@ Margin property
   left: inherit; }
 .rtl .timeline__post {
   border-left: none;
-  border-right: 3px solid #6a425c; }
+  border-right: 3px solid #14bef0; }
 
 @media screen and (max-width: 640px) {
   .rtl .timeline5:before {

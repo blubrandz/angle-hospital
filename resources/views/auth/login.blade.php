@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href=" {{asset('backend/images/faviconnew.png')}} ">
 
-    <title>Aragma - Log in </title>
+    <title>Angle Fertility - Log in </title>
   
 	<!-- Vendors Style-->
 	<link rel="stylesheet" href="{{asset('backend/css/vendors_css.css')}}">
@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">	
 
 </head>
-<body class="hold-transition theme-primary bg-dark" >  <!-- bg-gradient-primary -->
+<body class="hold-transition theme-primary bg-light" >  <!-- bg-gradient-primary -->
 	
 	<div class="container h-p100">
 		<div class="row align-items-center justify-content-md-center h-p100">	

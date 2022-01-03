@@ -76,7 +76,21 @@
           </a>
           <ul class="treeview-menu">
             <li><a href=" {{ Route('doctortimeslots.add') }} "><i class="ti-more"></i>Add Timeslot</a></li>
-            <li><a href="calendar.html"><i class="ti-more"></i>View Timeslot</a></li>
+            <li><a href=" {{ Route('doctortimeslots.view') }} "><i class="ti-more"></i>View Timeslot</a></li>
+          </ul>
+        </li> 
+
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="grid"></i>
+            <span>Manage Booking</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="chat.html"><i class="ti-more"></i>Chat</a></li>
+            <li><a href="calendar.html"><i class="ti-more"></i>Calendar</a></li>
           </ul>
         </li> 
 

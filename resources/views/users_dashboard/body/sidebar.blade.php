@@ -49,6 +49,22 @@
             </ul>
           </li>
 
+        <li class="header nav-small-cap">Manage Booking</li>
+
+
+      <li class="treeview {{ ($prefix == '/patientappointment')?"active":"" }}"> 
+        <a href="#">
+          <i data-feather="mail"></i> <span>Manage Appointment</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href=" {{ route('patientappointment.add') }} "><i class="ti-more"></i>Add Appointment</a></li>
+          <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Appintment</a></li>
+        </ul>
+      </li>
+
       <li class="treeview">
         <a href="#">
           <i data-feather="mail"></i> <span>Mailbox</span>
@@ -62,6 +78,9 @@
           <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>Read</a></li>
         </ul>
       </li>
+
+      <li class="header nav-small-cap">Logoff</li>
+
 		  
 		<li>
           <a href="{{Route('userdashboard.logout')}}">

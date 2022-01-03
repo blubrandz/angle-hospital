@@ -34,21 +34,28 @@ class manageDoctorDaysController extends Controller
 
     //view for dates  
     public function ViewManageDoctorDays() {
-        $data = appointment_date::latest()->get() ;
+        $id = Auth::user()->id ;
+        $user = User::find($id) ;
+        $data = appointment_date::latest()->where('username_appointmentdate' , $user->name)->where('email_appointmentdate',$user->email)->get() ;
         return view('doctor_dashboard.doctor_days.view_days' , compact(['data']));
     }
 
     //view upcoming dates
     public function ViewUpcomingManageDoctorDays() {
         $currentDate = date('Y-m-d');
-        $data = appointment_date::latest()->where('date_appointmentdate', '>=' , $currentDate)->get() ;
+        $id = Auth::user()->id ;
+        $user = User::find($id) ;
+        $data = appointment_date::latest()->where('username_appointmentdate' , $user->name)->where('email_appointmentdate',$user->email)->where('date_appointmentdate', '>=' , $currentDate)->get() ;
         return view('doctor_dashboard.doctor_days.view_days' , compact(['data']));
     }
 
     //view passed party 
     public function ViewPassedAppointmentManageDoctorDays() {
         $currentDate = date('Y-m-d');
-        $data = appointment_date::latest()->where('date_appointmentdate', '<=' , $currentDate)->get() ;
+        $id = Auth::user()->id ;
+        $user = User::find($id) ;
+
+        $data = appointment_date::latest()->where('username_appointmentdate' , $user->name)->where('email_appointmentdate',$user->email)->where('date_appointmentdate', '<=' , $currentDate)->get() ;
         return view('doctor_dashboard.doctor_days.view_days' , compact(['data']));
     }
 

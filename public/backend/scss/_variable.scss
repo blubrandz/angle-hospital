@@ -93,7 +93,7 @@ $vk: #45668e;
 
 /*Theme Colors*/
 
-$dark: #475f7b;
+$dark: #000000;
 $light:#d5dfea;
 $light2:#fafafa;
 $light3: #f2f4f4;
@@ -102,12 +102,12 @@ $light5: #bac0c7;
 $light6: #eef0f8;
 $white:#ffffff;
 $black:#000000;
-$primary:#6a425c;
+$primary:#14bef0;
 $success:#e2bd45;
 $danger:#EF3737;
 $warning:#FFB800;
-$info:#6a425c;
-$secondary:#475F7B;
+$info:#14bef0;
+$secondary:#000000;
 $mildgray: #bcc2c8;
 $dx-blue: #ffffff;
 
@@ -125,7 +125,7 @@ $danger-lite:#ffe2e5;
 $body-dark: #16171b;
 $dark-text: #ffffff;
 $dark2: #566f9e;
-$dark3: #272e48;
+$dark3: #14bef0;
 $dark-title: #ffffff;
 
 $colors: (
@@ -152,9 +152,9 @@ $gray-800:      #435177;
 $gray-900:      #1c2d41;
 
 
-$theme-primary-primary: #6a425c;
-$theme-primary-secondary:#475F7B;
-$theme-primary-info: #6a425c;
+$theme-primary-primary: #14bef0;
+$theme-primary-secondary:#000000;
+$theme-primary-info: #14bef0;
 $theme-primary-success: #e2bd45;
 $theme-primary-danger: #EF3737;
 $theme-primary-warning: #FFB800;
@@ -163,9 +163,9 @@ $theme-primary-grd: linear-gradient(45deg, $theme-primary-primary, $theme-primar
 $theme-primary-grd-dark: linear-gradient(45deg, darken($theme-primary-primary, 20%), darken($theme-primary-info, 20%));
 
 
-$theme-secondary-primary: #475F7B;
-$theme-secondary-secondary:#6a425c;
-$theme-secondary-info: #6a425c;
+$theme-secondary-primary: #000000;
+$theme-secondary-secondary:#14bef0;
+$theme-secondary-info: #14bef0;
 $theme-secondary-success: #e2bd45;
 $theme-secondary-danger: #EF3737;
 $theme-secondary-warning: #FFB800;
@@ -173,9 +173,9 @@ $theme-secondary-warning: #FFB800;
 $theme-secondary-grd: linear-gradient(45deg, $theme-secondary-primary, $theme-secondary-info);
 $theme-secondary-grd-dark: linear-gradient(45deg, darken($theme-secondary-primary, 20%), darken($theme-secondary-info, 20%));
 
-$theme-info-primary: #6a425c;
-$theme-info-secondary:#475F7B;
-$theme-info-info: #6a425c;
+$theme-info-primary: #14bef0;
+$theme-info-secondary:#000000;
+$theme-info-info: #14bef0;
 $theme-info-success: #e2bd45;
 $theme-info-danger: #EF3737;
 $theme-info-warning: #FFB800;
@@ -184,9 +184,9 @@ $theme-info-grd: linear-gradient(45deg, $theme-info-primary, $theme-info-info);
 $theme-info-grd-dark: linear-gradient(45deg, darken($theme-info-primary, 20%), darken($theme-info-info, 20%));
 
 $theme-success-primary: #e2bd45;
-$theme-success-secondary:#475F7B;
-$theme-success-info: #6a425c;
-$theme-success-success: #6a425c;
+$theme-success-secondary:#000000;
+$theme-success-info: #14bef0;
+$theme-success-success: #14bef0;
 $theme-success-danger: #EF3737;
 $theme-success-warning: #FFB800;
 
@@ -194,21 +194,21 @@ $theme-success-grd: linear-gradient(45deg, $theme-success-primary, $theme-succes
 $theme-success-grd-dark: linear-gradient(45deg, darken($theme-success-primary, 20%), darken($theme-success-info, 20%));
 
 $theme-danger-primary: #EF3737;
-$theme-danger-secondary:#475F7B;
-$theme-danger-info: #6a425c;
+$theme-danger-secondary:#000000;
+$theme-danger-info: #14bef0;
 $theme-danger-success: #e2bd45;
-$theme-danger-danger: #6a425c;
+$theme-danger-danger: #14bef0;
 $theme-danger-warning: #FFB800;
 
 $theme-danger-grd: linear-gradient(45deg, $theme-danger-primary, $theme-danger-info);
 $theme-danger-grd-dark: linear-gradient(45deg, darken($theme-danger-primary, 20%), darken($theme-danger-info, 20%));
 
 $theme-warning-primary: #FFB800;
-$theme-warning-secondary:#475F7B;
-$theme-warning-info: #6a425c;
+$theme-warning-secondary:#000000;
+$theme-warning-info: #14bef0;
 $theme-warning-success: #e2bd45;
 $theme-warning-danger: #EF3737;
-$theme-warning-warning: #6a425c;
+$theme-warning-warning: #14bef0;
 
 $theme-warning-grd: linear-gradient(45deg, $theme-warning-primary, $theme-warning-info);
 $theme-warning-grd-dark: linear-gradient(45deg, darken($theme-warning-primary, 20%), darken($theme-warning-info, 20%));

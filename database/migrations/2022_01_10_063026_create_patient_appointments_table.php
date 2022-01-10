@@ -15,6 +15,13 @@ class CreatePatientAppointmentsTable extends Migration
     {
         Schema::create('patient_appointments', function (Blueprint $table) {
             $table->id();
+            $table->string('username_timeslot')->nullable();
+            $table->string('useremail_timeslot')->nullable();
+            $table->string('pateintappo_doctorname')->nullable();
+            $table->string('pateintappo_doctordate')->nullable();
+            $table->string('pateintappo_doctortimeslot')->nullable();
+            $table->enum('patientappo_status', ['approved', 'deny'])->nullable();
+            $table->string('username_empty')->nullable();
             $table->timestamps();
         });
     }

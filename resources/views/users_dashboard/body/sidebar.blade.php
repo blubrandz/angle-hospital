@@ -57,7 +57,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href=" {{ route('patientappointment.add') }} "><i class="ti-more"></i>Add Appointment</a></li>
-          <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Appintment</a></li>
+          <li><a href="{{ route('patientappointment.view') }}"><i class="ti-more"></i>View Appintment</a></li>
         </ul>
       </li>
 

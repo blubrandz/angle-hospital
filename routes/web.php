@@ -294,7 +294,11 @@ Route::prefix('patientappointment')->group( function() {
     Route::get('/add' , [ManagePatientAppointmentController::class , 'AddManagePatientAppointment'])->name('patientappointment.add') ;
 
     //store the appointment
-    Route::get('/store' , [ManagePatientAppointmentController::class , 'AddManagePatientAppointment'])->name('patientappointment.add') ;
+    Route::post('/store' , [ManagePatientAppointmentController::class , 'StoreManagePatientAppointment'])->name('patientappointment.store') ;
+
+    //view all appointment 
+    Route::get('/view' , [ManagePatientAppointmentController::class , 'ViewManagePatientAppointment'])->name('patientappointment.view') ;
+
 
 
 });

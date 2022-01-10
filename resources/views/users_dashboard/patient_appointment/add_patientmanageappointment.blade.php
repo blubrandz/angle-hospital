@@ -24,7 +24,7 @@
             <!-- Basic Forms -->
              <div class="box">
                <div class="box-header with-border">
-                <a href=" {{ route('patientappointment.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> View All Your Appointment Booking </a>
+                <a href=" {{ route('patientappointment.view') }} " class="btn btn-rounded btn-success md-5" style="float: right"> View Your Appoitment</a>
                  <h3 class="box-title">Add Your Day & Time Schedule</h3>
 
                  {{-- <h6 class="box-subtitle"><a class="text-warning" href=""> ( * ) </a> Star Maked field are mendatory to fill </h6> --}}
@@ -81,7 +81,6 @@
                                         <div class="controls">
                                             <select name="pateintappo_doctordate" id="pateintappointment_doctordate"  class="form-control">
                                                 <option value="" selected="" disabled>----Select Date----</option>
-                                               
                                             </select>
                                         </div>
                                     </div>

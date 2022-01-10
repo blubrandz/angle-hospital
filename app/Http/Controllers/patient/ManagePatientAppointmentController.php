@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth ;
 use App\Models\User ;
 use App\Models\appointment_date ;
 use App\Models\appointment_timeslot ;
+use App\Models\patient_appointment ;
 
 use function PHPUnit\Framework\returnValue;
 
@@ -52,5 +53,29 @@ class ManagePatientAppointmentController extends Controller
             }
             echo $html;
         }
+    }
+
+    //store patient appointment dated
+    public function StoreManagePatientAppointment(Request $request) {
+        $data = new patient_appointment() ;
+        $data->username_timeslot = $request->username_timeslot ;
+        $data->useremail_timeslot = $request->useremail_timeslot ;
+        $data->pateintappo_doctorname = $request->pateintappo_doctorname ;
+        $data->pateintappo_doctordate = $request->pateintappo_doctordate ;
+        $data->pateintappo_doctortimeslot = $request->pateintappo_doctortimeslot ;
+        $data->save() ;
+        $notification = array(
+            'message' => "Your Appointment at $request->pateintappo_doctordate  with Dr.$request->pateintappo_doctorname Booked succesfully",
+            'alert-type' => 'success'
+        ) ;
+        return redirect()->route('patientappointment.view')->with($notification) ;
+    }
+
+    //view paitent appointments
+    public function ViewManagePatientAppointment() {
+        $id = Auth::user()->id ;
+        $user = User::find($id) ;
+        $data = patient_appointment::latest()->where('username_timeslot', $user->name)->where('useremail_timeslot',$user->email)->get() ;       
+        return view('users_dashboard.patient_appointment.view_pateintmanagementappo',compact(['data'])) ;
     }
 }

@@ -293,7 +293,21 @@ Route::prefix('patientappointment')->group( function() {
     //add appointment
     Route::get('/add' , [ManagePatientAppointmentController::class , 'AddManagePatientAppointment'])->name('patientappointment.add') ;
 
+    //store the appointment
+    Route::get('/store' , [ManagePatientAppointmentController::class , 'AddManagePatientAppointment'])->name('patientappointment.add') ;
+
+
 });
+
+    //AJAX DATA[ geting the appointment dated in dropdown]   
+    Route::post('getpatient_doctordate' , [ManagePatientAppointmentController::class , 'GetDateManageAjaxData'])->name('getpatient_doctordate') ;
+
+    //AJAX DATA [getiing appointment time in dropdown for patient]
+    Route::post('getpatient_doctortime' , [ManagePatientAppointmentController::class , 'GetTimeManageAjaxData'])->name('getpatient_doctortime') ;
+
+    
+
+
 
 
 

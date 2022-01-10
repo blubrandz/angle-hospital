@@ -17,6 +17,12 @@
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">	
 
+	<style>
+		body input::placeholder{
+			color: #333536 !important; 
+		}
+	</style>
+
 </head>
 <body class="hold-transition theme-primary bg-light" >  <!-- bg-gradient-primary -->
 	
@@ -28,7 +34,7 @@
 					<div class="col-lg-4 col-md-5 col-12">
 						<div class="content-top-agile p-10">
 							<h2 class="text-white">Get started with Us</h2>
-							<p class="text-white-50">Sign in to start your session</p>							
+							<p class="text-dark-50">Sign in to start your session</p>							
 						</div>
 						<div class="p-30 rounded30 box-shadowed b-2 border-new b-dashed">
                             
@@ -39,7 +45,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
 										</div>
-										<input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username">
+										<input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username" >
 									</div>
 								</div>
 

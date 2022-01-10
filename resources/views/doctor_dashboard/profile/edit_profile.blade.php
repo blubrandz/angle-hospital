@@ -28,7 +28,7 @@
 
 
                            <!--row Stared here-->
-                           <div class="row">
+                           <div class="row" style="display: none">
                                <div class="col-md-6"><!--col-6 stared here-->
                                    <div class="form-group">
                                        <h5>Your Name </h5>
@@ -37,7 +37,7 @@
                                    </div>
                                </div><!--col-6 Ended here-->
 
-                               <div class="col-md-6"><!--col-6 stared here-->
+                               <div class="col-md-6" ><!--col-6 stared here-->
                                    <div class="form-group">
                                        <h5>Your Email</h5>
                                        <div class="controls">

@@ -211,9 +211,9 @@ body.dark-skin {
     background-color: rgba(26, 35, 58, 0.2); }
   .dark-skin .btn.btn-outline.btn-white {
     color: #000000 !important;
-    border-color: #ffffff !important; }
+    border-color: #000000!important; }
   .dark-skin .btn.btn-outline.btn-dark {
-    color: #ffffff !important;
+    color: #000000!important;
     background-color: transparent;
     border-color: #000000; }
 .dark-skin .btn-toggle:before, .dark-skin .btn-toggle:after {
@@ -265,17 +265,17 @@ body.dark-skin {
   .dark-skin .box .knob-label {
     color: #778cc2; }
 .dark-skin .box-inverse {
-  color: #ffffff !important;
+  color: #000000!important;
   background-color: #14bef0; }
   .dark-skin .box-inverse .box-header {
-    color: #ffffff !important;
+    color: #000000!important;
     border-color: rgba(255, 255, 255, 0.15); }
   .dark-skin .box-inverse .box-title {
-    color: #ffffff !important; }
+    color: #000000!important; }
   .dark-skin .box-inverse h1, .dark-skin .box-inverse h2, .dark-skin .box-inverse h3, .dark-skin .box-inverse h4, .dark-skin .box-inverse h5, .dark-skin .box-inverse h6, .dark-skin .box-inverse small {
-    color: #ffffff !important; }
+    color: #000000!important; }
   .dark-skin .box-inverse .box-controls li > a {
-    color: #ffffff !important; }
+    color: #000000!important; }
   .dark-skin .box-inverse .box-footer {
     border-color: rgba(255, 255, 255, 0.5); }
   .dark-skin .box-inverse .box-action {
@@ -583,15 +583,15 @@ body.dark-skin {
     border-color: rgba(255, 255, 255, 0.12);
     color: #ffffff; }
     .dark-skin .nav-tabs .nav-link.active {
-      color: #ffffff !important; }
+      color: #000000!important; }
 .dark-skin .nav-pills > li > a {
   color: #ffffff; }
   .dark-skin .nav-pills > li > a.active {
-    color: #ffffff !important; }
+    color: #000000!important; }
 .dark-skin .nav-tabs-inverse-mode .nav-link.active {
-  color: #ffffff !important; }
+  color: #000000!important; }
   .dark-skin .nav-tabs-inverse-mode .nav-link.active:hover, .dark-skin .nav-tabs-inverse-mode .nav-link.active:focus {
-    color: #ffffff !important; }
+    color: #000000!important; }
 .dark-skin .timeline__post {
   background-color: #32436f; }
 .dark-skin .timeline .timeline-item > .timeline-event {

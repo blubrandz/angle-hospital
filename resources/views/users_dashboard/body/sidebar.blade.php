@@ -16,11 +16,7 @@
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
             {{-- <img src="{{asset('backend/images/logo/logo.png')}}" style="width: 40%" alt=""> --}}
-            <img src="{{asset('backend/images/logo-dark.png')}}" alt="">
-            <h3><b>Angle Hospital</b></h3>
-
-            {{-- <div class="logo"><b>A<span>r</span>a<span>g</span>ma</b></div> --}}
-
+            <img src="{{asset('backend/images/logo/logo.png')}}" style="width: 40%" alt="">
 					 </div>
 				</a>
 			</div>

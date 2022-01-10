@@ -33,7 +33,7 @@
                <div class="box-body">
                  <div class="row">
                    <div class="col">
-                       <form  method="POST" action="{{Route('doctortimeslots.store')}}" enctype="multipart/form-data"> 
+                       <form  method="POST" action="{{Route('patientappointment.store')}}" enctype="multipart/form-data"> 
                         @csrf
                          <div class="row">
                         <div class="col-12">	
@@ -61,10 +61,10 @@
                                     <div class="form-group">
                                         <h5>Select Doctor </h5>
                                         <div class="controls">
-                                            <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
+                                            <select name="pateintappo_doctorname" id="pateintappointment_doctorname"  class="form-control">
                                                 <option value="" selected="" disabled>----Select Doctor----</option>
                                                 @foreach ($doctorList as $item)
-                                                <option value="{{ $item->name }}"> {{ $item->name }} </option>
+                                                <option value="{{ $item->email }}"> {{ $item->name }} </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -79,11 +79,9 @@
                                     <div class="form-group">
                                         <h5>Select Date </h5>
                                         <div class="controls">
-                                            <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
+                                            <select name="pateintappo_doctordate" id="pateintappointment_doctordate"  class="form-control">
                                                 <option value="" selected="" disabled>----Select Date----</option>
-                                                @foreach ($dateData as $item)
-                                                <option value="{{ $item->date_appointmentdate }}"> {{ date('jS F Y' , strToTime($item->date_appointmentdate)) }} </option>
-                                                @endforeach
+                                               
                                             </select>
                                         </div>
                                     </div>
@@ -97,11 +95,9 @@
                                     <div class="form-group">
                                         <h5>Select Timeslot </h5>
                                         <div class="controls">
-                                            <select name="selectdate_timeslot" id="selectdate_timeslot"  class="form-control">
+                                            <select name="pateintappo_doctortimeslot" id="pateintappointment_doctortimeslot"  class="form-control">
                                                 <option value="" selected="" disabled>----Select Timeslot----</option>
-                                                @foreach ($dateData as $item)
-                                                <option value="{{ $item->date_appointmentdate }}"> {{ date('jS F Y' , strToTime($item->date_appointmentdate)) }} </option>
-                                                @endforeach
+                                                
                                             </select>
                                         </div>
                                     </div>
@@ -109,41 +105,6 @@
                               </div>
                               <!--row end-->
 
-                              <div class="row">
-                                  <div class="col-md-6">
-                                    <!-- time Picker -->
-                                    
-                                    <div class="bootstrap-timepicker">                                     
-                                        <!-- /.form group -->
-                                        <div class="form-group">
-                                            <h5>Appointment time from <span class="text-danger">*</span></h5>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>
-                                            </div>
-                                            <input type="text" name="starting_time_timeslot" class="form-control timepicker">
-                                        </div>
-                                        </div>
-                                    </div>
-                                  </div>
-
-                                  <div class="col-md-6">
-                                    <!-- time Picker -->
-                                    <div class="bootstrap-timepicker">                                     
-                                        <!-- /.form group -->
-                                        <div class="form-group">
-                                            <h5>Appointmeent Time to <span class="text-danger">*</span></h5>
-                                        <div class="input-group">
-                                            <div class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>
-                                            </div>
-                                            <input type="text" name="ending_time_timeslot" class="form-control timepicker">
-                                        </div>
-                                        </div>
-                                    </div>
-                                  </div>
-
-                              </div>
                         </div> 
                            
                            <div class="text-xs-right">
@@ -214,6 +175,44 @@
        $('.ckeditor').ckeditor();
     });
 </script> --}}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    $(document).ready(function() {
+        $("#pateintappointment_doctorname").change(function() {
+            let doctornameid = $(this).val() ;
+            jQuery.ajax({
+                url: '/getpatient_doctordate',
+                type: 'post',
+                data: 'doctornameid='+doctornameid+'&_token={{ csrf_token() }}',
+                success: function(result){
+                    jQuery('#pateintappointment_doctordate').html(result) ;
+                }
+            })
+        })
+    })
+</script>
+
+<!--time picker -->
+<script>
+    $(document).ready(function() {
+        $("#pateintappointment_doctordate").change(function() {
+            let doctordateid = $(this).val() ;
+            let doctornamedata = $("#pateintappointment_doctorname").find(":selected").text() ;
+            jQuery.ajax({
+                url: '/getpatient_doctortime',
+                type: 'post',
+                data: 'doctordateid='+doctordateid+ '&doctornamedata='+doctornamedata+'&_token={{ csrf_token() }}' ,
+                success: function(result){
+                    jQuery('#pateintappointment_doctortimeslot').html(result) ;
+                }
+            })
+        })
+    })
+</script>
+
+
 
 
 

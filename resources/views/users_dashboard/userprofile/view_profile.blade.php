@@ -16,11 +16,11 @@
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header bg-black" >
                      {{-- style="background: url('../images/gallery/full/10.jpg') center center;" --}}
-                  <h3 class="widget-user-username">User Name :  {{$user->name}} </h3>
+                  <h3 class="widget-user-username text-dark">User Name :  {{$user->name}} </h3>
                   <a href=" {{ route('userprofile.edit') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add More Details </a>
 
-                  <h6 class="widget-user-desc">User Type : {{$user->usertype}} </h6>
-                  <h6 class="widget-user-desc">User Email : {{$user->email}} </h6>
+                  <h6 class="widget-user-desc text-dark">User Type : {{$user->usertype}} </h6>
+                  <h6 class="widget-user-desc text-dark">User Email : {{$user->email}} </h6>
 
                 </div>
                 <div class="widget-user-image">

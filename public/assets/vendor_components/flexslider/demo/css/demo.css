@@ -96,12 +96,12 @@ p {
 .toggle li a {width: 50px; padding: 6px 0; text-align: center; display: block; text-shadow: 1px 1px 0 #fff; font-size: 12px; font-weight: 600; color: #666; -webkit-border-radius: 0 4px 4px 0; -moz-border-radius: 0 4px 4px 0; -o-border-radius: 0 4px 4px 0; border-radius: 0 4px 4px 0; 
 
 background: #ffffff; /* Old browsers */
-background: -moz-linear-gradient(top, #ffffff 0%, #ededed 100%); /* FF3.6+ */
+background: -moz-linear-gradient(top, #0000000%, #ededed 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, #ffffff 0%,#ededed 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, #ffffff 0%,#ededed 100%); /* IE10+ */
-background: linear-gradient(top, #ffffff 0%,#ededed 100%); /* W3C */
+background: -webkit-linear-gradient(top, #0000000%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #0000000%,#ededed 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #0000000%,#ededed 100%); /* IE10+ */
+background: linear-gradient(top, #0000000%,#ededed 100%); /* W3C */
 
 box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
 -moz-box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;

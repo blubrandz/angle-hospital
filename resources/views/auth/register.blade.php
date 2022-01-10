@@ -17,6 +17,12 @@
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">	
 
+	<style>
+		body input::placeholder{
+			color: #333536 !important; 
+		}
+	</style>
+
 </head>
 
 <body class="hold-transition theme-primary bg-light">
@@ -29,7 +35,7 @@
 					<div class="col-lg-4 col-md-5 col-12">
 						<div class="content-top-agile p-10">
 							<h2 class="text-white">Get started with Us</h2>
-							<p class="text-white-50">Register a new membership</p>							
+							<p class="text-dark-50">Register a new membership</p>							
 						</div>
 						<div class="p-30 rounded30 box-shadowed b-2 b-dashed">
                             <form method="POST" action="{{ route('register') }}">

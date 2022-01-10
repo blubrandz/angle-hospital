@@ -16,11 +16,11 @@
                 <!-- Add the bg color to the header using any of the bg-* classes -->
                 <div class="widget-user-header bg-black" >
                      {{-- style="background: url('../images/gallery/full/10.jpg') center center;" --}}
-                  <h3 class="widget-user-username">Name :  <b>Dr. </b> {{ Str::title($user->name) }} </h3>
+                  <h3 class="widget-user-username text-dark">Name :  <b>Dr. </b> {{ Str::title($user->name) }} </h3>
                   <a href=" {{ route('doctorprofile.edit') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Edit Profile </a>
 
-                  <h6 class="widget-user-desc">Profession : {{$user->usertype}} </h6>
-                  <h6 class="widget-user-desc">Email Address : {{$user->email}} </h6>
+                  <h6 class="widget-user-desc text-dark">Profession : {{$user->usertype}} </h6>
+                  <h6 class="widget-user-desc text-dark">Email Address : {{$user->email}} </h6>
                   
 
                 </div>

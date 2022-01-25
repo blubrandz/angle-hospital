@@ -21,6 +21,8 @@ use App\Http\Controllers\patient\ManagePatientAppointmentController ;
 //Doctor Dashboard
 use App\Http\Controllers\doctor\manageDoctorDaysController ;
 use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
+use App\Http\Controllers\doctor\manageDoctorAppoitmentController ;
+use App\Http\Controllers\doctor\manageDoctorPrescriptionController ;
 //models
 use App\Models\User ;
 
@@ -299,15 +301,27 @@ Route::prefix('patientappointment')->group( function() {
     //view all appointment 
     Route::get('/view' , [ManagePatientAppointmentController::class , 'ViewManagePatientAppointment'])->name('patientappointment.view') ;
 
+    //reschedule the Appoitment here
+    Route::get('/rescheduleadd/{id}' , [ManagePatientAppointmentController::class , 'AddRescheduleManagePatientAppointment'])->name('patientappointment.rescheduleadd') ;
+
+    Route::post('/update/{id}' , [ManagePatientAppointmentController::class , 'UpdateManagePatientAppointment'])->name('patientappointment.update') ;
+
 
 
 });
-
     //AJAX DATA[ geting the appointment dated in dropdown]   
     Route::post('getpatient_doctordate' , [ManagePatientAppointmentController::class , 'GetDateManageAjaxData'])->name('getpatient_doctordate') ;
 
     //AJAX DATA [getiing appointment time in dropdown for patient]
     Route::post('getpatient_doctortime' , [ManagePatientAppointmentController::class , 'GetTimeManageAjaxData'])->name('getpatient_doctortime') ;
+
+    //Update AJAX DATA[ geting the appointment dated in dropdown]   
+    Route::post('updategetpatient_doctordate' , [ManagePatientAppointmentController::class , 'UpdateGetDateManageAjaxData'])->name('updategetpatient_doctordate') ;
+
+    //Update AJAX DATA [getiing appointment time in dropdown for patient]
+    Route::post('updategetpatient_doctortime' , [ManagePatientAppointmentController::class , 'UpdateGetTimeManageAjaxData'])->name('updategetpatient_doctortime') ;
+
+
 
     
 
@@ -391,6 +405,59 @@ Route::prefix('doctortimeslots')->group( function() {
 
     //delete the timeslot 
     Route::get('/delete/{id}' , [manageDoctorTimeSlotController::class , 'DeleteManageDoctorTimeSlot'])->name('doctortimeslots.delete') ;
+
+
+}) ;
+
+
+//
+//MANAGE DOCTOR APPOITMENTS HERE
+//
+Route::prefix('doctorappoitments')->group( function() {
+    //view all doctor appoitments here
+    Route::get('/viewall' , [manageDoctorAppoitmentController::class , 'ViewAllDoctoreAppoitments'])->name('doctorappoitments.viewall') ;
+
+    //Upcomming Appoitments
+    Route::get('/upcommingappoitments' , [manageDoctorAppoitmentController::class , 'UpcommingAppoitmentsDoctoreAppoitments'])->name('doctorappoitments.upcommingappoitments') ;
+
+    //Passed Appoitments Dated
+    Route::get('/passedappoitments' , [manageDoctorAppoitmentController::class , 'PassedAppoitmentsDoctoreAppoitments'])->name('doctorappoitments.passedappoitments') ;
+
+    //delete appoitment
+    Route::get('/delete/{id}' , [manageDoctorAppoitmentController::class , 'DeleteDoctoreAppoitments'])->name('doctorappoitments.delete') ;
+
+}) ;
+
+//
+//Manage Doctor Prescription section
+//
+Route::prefix('doctorprescription')->group( function() { 
+    //view todays appoitment
+    Route::get('/todaysappoitmentview' , [manageDoctorPrescriptionController::class , 'viewDoctorsTodaysAppoiutment'])->name('doctorprescription.todaysappoitmentview') ;
+
+    //Add Prescriptions  addprescription
+    Route::get('/addprescription/{id}' , [manageDoctorPrescriptionController::class , 'AddPrescriptionMETHODONeDoctorsTodaysAppoiutment'])->name('doctorprescription.addprescription') ;
+
+    //storing the prescription here
+    Route::post('/store1' , [manageDoctorPrescriptionController::class , 'StoreFIrstFormDataDoctorsTodaysAppoiutment'])->name('doctorprescription.store1') ;
+
+    //view all doctor prescriptions
+    Route::get('/viewallprescription' , [manageDoctorPrescriptionController::class , 'ViewAllDoctorPrescriptions'])->name('doctorprescription.viewallprescription') ;
+
+    //view full details
+    Route::get('/viewalldetails/{id}' , [manageDoctorPrescriptionController::class , 'ViewDetailsOFPrescriptions'])->name('doctorprescription.viewalldetails') ;
+
+    //Edit Doctor Prescription full details
+    Route::get('/editprescription/{id}' , [manageDoctorPrescriptionController::class , 'EditDoctorPrescriptions'])->name('doctorprescription.editprescription') ;
+
+    //Update Doctor Prescription full details
+    Route::post('/update/{id}' , [manageDoctorPrescriptionController::class , 'UpdateDoctorPrescriptions'])->name('doctorprescription.update') ;
+
+    //previoushistory of patients here
+    Route::get('/previoushistory/{id}' , [manageDoctorPrescriptionController::class , 'PreviousHistoryOfPatient'])->name('doctorprescription.previoushistory') ;
+
+
+
 
 
 }) ;

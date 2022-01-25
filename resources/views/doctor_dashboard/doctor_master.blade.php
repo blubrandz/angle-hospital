@@ -336,6 +336,12 @@
 <script src="{{asset('../assets/vendor_plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
 <script src="{{asset('../assets/vendor_plugins/iCheck/icheck.min.js')}}"></script>
 
+<!--invoice download-->
+<script src="{{asset('../assets/icons/feather-icons/feather.min.js')}}"></script>
+<script src="{{asset('../assets/vendor_plugins/JqueryPrintArea/demo/jquery.PrintArea.js')}}"></script>
+<script src="{{asset('backend/js/pages/invoice.js')}}"></script>
+
+
 
 
 <script src="{{asset('../assets/vendor_components/datatable/datatables.min.js')}}"></script>

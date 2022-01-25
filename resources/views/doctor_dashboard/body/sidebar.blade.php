@@ -49,6 +49,21 @@
 
         <li class="header nav-small-cap">Manage Your Schedule</li>
 
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Medicine Management</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="chat.html"><i class="ti-more"></i>Add Medicine</a></li>
+            <li><a href="calendar.html"><i class="ti-more"></i>View all medicine</a></li>
+          </ul>
+        </li> 
+
+
 		
         <li class="treeview {{ ($prefix == '/doctorday')?"active":"" }}">
           <a href="#">
@@ -80,19 +95,34 @@
           </ul>
         </li> 
 
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/doctorappoitments')?"active":"" }}">
           <a href="#">
             <i data-feather="grid"></i>
-            <span>Manage Booking</span>
+            <span>Manage Appoitments</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="chat.html"><i class="ti-more"></i>Chat</a></li>
-            <li><a href="calendar.html"><i class="ti-more"></i>Calendar</a></li>
+            <li><a href="{{ Route('doctorappoitments.viewall') }}"><i class="ti-more"></i>View all Appoitment</a></li>
+            <li><a href="{{ Route('doctorappoitments.upcommingappoitments') }}"><i class="ti-more"></i>Upcomming Appoitment</a></li>
+            <li><a href="{{ Route('doctorappoitments.passedappoitments') }}"><i class="ti-more"></i>Passed Appoitment</a></li>
           </ul>
         </li> 
+
+        <li class="treeview {{ ($prefix == '/doctorprescription')?"active":"" }}">
+          <a href="#">
+            <i data-feather="mail"></i> <span>Manage Prescription</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ Route('doctorprescription.todaysappoitmentview') }}"><i class="ti-more"></i>Todays Appoitment</a></li>
+            <li><a href="{{ Route('doctorprescription.viewallprescription') }}"><i class="ti-more"></i>All prescription</a></li>
+            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>User Based Prescriptions</a></li>
+          </ul>
+        </li>
 
         <li class="treeview">
           <a href="#">

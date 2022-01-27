@@ -23,6 +23,7 @@ use App\Http\Controllers\doctor\manageDoctorDaysController ;
 use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
 use App\Http\Controllers\doctor\manageDoctorAppoitmentController ;
 use App\Http\Controllers\doctor\manageDoctorPrescriptionController ;
+use App\Http\Controllers\doctor\medicineManagementDoctorPannelController ;
 //models
 use App\Models\User ;
 
@@ -368,6 +369,31 @@ Route::prefix('doctorprofile')->group( function() {
 }) ;
 
 //
+//MANAGE DOCTOR PANNEL MEDICNE MANAGEMENT 
+//
+Route::prefix('doctormedicine')->group( function() {
+    Route::get('/addmedicine' , [medicineManagementDoctorPannelController::class , 'AddMedicineByDoctor'])->name('doctormedicine.addmedicine') ;
+
+    //store the medicine names 
+    Route::post('/store' , [medicineManagementDoctorPannelController::class , 'StoreMedicineByDoctor'])->name('doctormedicine.store') ;
+
+    //view all medicine here
+    Route::get('/view' , [medicineManagementDoctorPannelController::class , 'ViewAllMedicineByDoctor'])->name('doctormedicine.view') ;
+
+    //delete the medicine here
+    Route::get('/delete/{id}' , [medicineManagementDoctorPannelController::class , 'DeleteMedicineByDoctor'])->name('doctormedicine.delete') ;
+
+
+
+
+}) ;
+/////////////
+///////////
+///////////
+/////////
+
+
+//
 //manage time slotes for doctors
 //
 Route::prefix('doctorday')->group( function() {
@@ -455,9 +481,6 @@ Route::prefix('doctorprescription')->group( function() {
 
     //previoushistory of patients here
     Route::get('/previoushistory/{id}' , [manageDoctorPrescriptionController::class , 'PreviousHistoryOfPatient'])->name('doctorprescription.previoushistory') ;
-
-
-
 
 
 }) ;

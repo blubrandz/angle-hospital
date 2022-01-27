@@ -49,7 +49,7 @@
 
         <li class="header nav-small-cap">Manage Your Schedule</li>
 
-        <li class="treeview">
+        <li class="treeview {{ ($prefix == '/doctormedicine')?"active":"" }}">
           <a href="#">
             <i data-feather="message-circle"></i>
             <span>Medicine Management</span>
@@ -58,8 +58,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="chat.html"><i class="ti-more"></i>Add Medicine</a></li>
-            <li><a href="calendar.html"><i class="ti-more"></i>View all medicine</a></li>
+            <li><a href="{{ Route('doctormedicine.addmedicine') }}"><i class="ti-more"></i>Add Medicine</a></li> 
+            <li><a href="{{ Route('doctormedicine.view') }}"><i class="ti-more"></i>View all medicine</a></li>
           </ul>
         </li> 
 

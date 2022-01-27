@@ -21,8 +21,8 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title">Dr.{{ $user->name }} Todays Appoitment </h3>
-                <a href=" {{ route('doctorday.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add New Appointment Date</a>
+                <h3 class="box-title">View all medicine </h3>
+                <a href=" {{ route('doctormedicine.addmedicine') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add New Medicine</a>
               </div>
               <!-- /.box-header -->
               <div class="box-body">
@@ -31,10 +31,10 @@
                       <thead>
                           <tr>
                               <th width="5%">SL</th>
-                              <th> Patient Name </th>
-                              <th> Patient Phone Number </th>
-                              <td> Date </td>
-                              <th> time </th>
+                              <th> Username </th>
+                              <th> user email </th>
+                              <th> Medicine Name </th>
+                              <th width="60%"> Medicine Description </th>
                               <th >Action</th>
                           </tr>
                       </thead>
@@ -42,17 +42,12 @@
                         @foreach ($data as $key => $item)
                           <tr>
                               <td> {{$key+1}} </td>
-                              <td> {{$item->username_timeslot }} </td>
-                              <td> {{ $item->patientappo_phonenumber }}</td>
-                              <td> {{ date('jS F Y' , strToTime($item->pateintappo_doctordate)) }} </td>
-                              <td> {{ $item->pateintappo_doctortimeslot }} </td>
+                              <th> {{ $item->medicine_username }} </th>
+                              <th> {{ $item->medicine_useremail }} </th>
+                              <td> {{$item->medicine_name }} </td>
+                              <td> {{ $item->medicine_note }}</td>
                                <td>
-                                <a class="btn btn-info" href=" {{Route('doctorprescription.addprescription',$item->id)}}" ><i class="fa fa-edit"></i> &nbsp; Write Prescription</a>
-                                &nbsp;&nbsp;
-                                <a class="btn btn-warning" href=" {{Route('doctorprescription.previoushistory',$item->id)}}"><i class="fa fa-book"></i> &nbsp;View Previous History</a>
-
-                                &nbsp;&nbsp;
-                                <a class="btn btn-danger" href=" {{Route('doctorday.delete',$item->id)}}" id="delete"><i class="fa fa-trash"></i> &nbsp;Cancel Appoitment</a>
+                                <a class="btn btn-danger" href=" {{Route('doctormedicine.delete',$item->id)}}" id="delete">Delete</a>
                             </td>
                           </tr>
                         @endforeach

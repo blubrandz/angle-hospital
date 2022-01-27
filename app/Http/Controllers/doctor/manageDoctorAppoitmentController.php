@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth ;
 use App\Models\appointment_date ;
 use App\Models\appointment_timeslot ;
 use App\Models\patient_appointment ;
+use App\Models\manage_medicine ;
+
 
 
 class manageDoctorAppoitmentController extends Controller

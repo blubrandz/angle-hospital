@@ -10,6 +10,8 @@ use App\Models\appointment_date ;
 use App\Models\appointment_timeslot ;
 use App\Models\patient_appointment ;
 use App\Models\doctor_prescription ;
+use App\Models\manage_medicine ;
+use Illuminate\Support\Facades\DB ;
 
 
 class manageDoctorPrescriptionController extends Controller
@@ -30,8 +32,8 @@ class manageDoctorPrescriptionController extends Controller
         $data = patient_appointment::find($id) ;
         $id = Auth::user()->id ;
         $user = User::find($id) ;
-
-        return view('doctor_dashboard.doctor_prescription.add_prescription1' , compact(['data' , 'user'])) ;
+        $medicineData = DB::table('manage_medicines')->orderBy('medicine_name')->get();
+        return view('doctor_dashboard.doctor_prescription.add_prescription1' , compact(['data' , 'user' , 'medicineData'])) ;
     }
 
     //storing the doctor prescription here
@@ -106,6 +108,6 @@ class manageDoctorPrescriptionController extends Controller
         $data = patient_appointment::find($id) ;
         
         $allData = doctor_prescription::latest()->where('patientname_prescription' , $data->username_timeslot)->where('patientemail_prescription' , $data->useremail_timeslot)->get() ;
-        return $allData ;
+        return view('doctor_dashboard.doctor_prescription.view_previoushistorypage' , compact(['allData'])) ;
     }
 }

@@ -90,11 +90,48 @@
                 <address>
                   <strong class="text-blue font-size-24">Medicines</strong><br>
                   
-                  {{-- {{ $data->medicine_prescription }} --}}
-                  @foreach ($data->medicine_prescription as $key=>$item)
+                  {{-- @foreach ($data->medicine_prescription as $key=>$item)
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$key+1}}. {{ $item }}
                   <br>
-                  @endforeach
+                  @endforeach --}}
+
+                        <div class="row mt-3 ml-5"> 
+                          <div class="col-md-3 m-0 p-0">
+                            <div class="list-group">
+                              <a  class="list-group-item list-group-item-action active">
+                                Medicine Name
+                              </a>
+                              @foreach ($data->medicine_prescription as $item)
+                              <span class="list-group-item list-group-item-action disabled"> {{ $item }} </span>
+  
+                              @endforeach
+                            </div>
+                          </div>
+
+                          <div class="col-md-4 m-0 p-0">
+                            <div class="list-group">
+                              <a href="#" class="list-group-item list-group-item-action active">
+                                Frequency
+                              </a>
+                              @foreach ($data->frequency_prescription as $freq)
+                              <span class="list-group-item list-group-item-action disabled"> {{ $freq }} </span>
+                              @endforeach
+                             
+                            </div>
+                          </div>
+
+                          <div class="col-md-4 m-0 p-0">
+                            <div class="list-group">
+                              <a href="#" class="list-group-item list-group-item-action active">
+                                Note
+                              </a>
+                              @foreach ($data->note_prescription as $note)
+                              <span class="list-group-item list-group-item-action disabled"> {{ $note }} </span>
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+
                   
                 </address>
               </div>

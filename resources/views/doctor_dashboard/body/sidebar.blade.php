@@ -120,7 +120,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ Route('doctorprescription.todaysappoitmentview') }}"><i class="ti-more"></i>Todays Appoitment</a></li>
             <li><a href="{{ Route('doctorprescription.viewallprescription') }}"><i class="ti-more"></i>All prescription</a></li>
-            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>User Based Prescriptions</a></li>
+            <li><a href="{{ Route('doctorprescription.userbasedprescription') }}"><i class="ti-more"></i>User Based Prescriptions</a></li>
           </ul>
         </li>
 

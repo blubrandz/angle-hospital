@@ -121,18 +121,175 @@
                                     </div>
                                 </div><!--col-6 Ended here-->
 
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+
+
                                 <div class="col-md-12 col-12"> <!-- /.col -->
-                                    <div class="form-group">
-                                    <label>Select Medicines</label>
-                                    <select class="form-control select2 pl-2"  name="medicine_prescription[]" data-placeholder="Select a Medicine"
-                                            style="width: 100%;">
-                                        <option value="" hidden>-- Select Medicine--</option>
-                                        @foreach ($medicineData as $meditem)
-                                        <option value="{{ $meditem->medicine_name }}">{{ $meditem->medicine_name }}</option>
-                                        @endforeach
-                                    </select>
+                                    <!--form Group one start here-->
+                                    <div class="form-group fieldGroup">
+                                        <div class="input-group">
+                                            <!--first data [medicine select start] -->
+                                            <div class="col-md-4">
+                                                <label>Select Medicines</label>
+                                                <select class="form-control select2 pl-2 "  name="medicine_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;"> 
+                                                    <option value="" hidden>-- Select Medicine--</option>
+                                                    @foreach ($medicineData as $meditem)
+                                                    <option value="{{ $meditem->medicine_name }}">{{ $meditem->medicine_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <!--first data end [medicine select end here]-->
+
+                                            <!--Second data [Frequency select start] -->
+                                            <div class="col-md-4">
+                                                <label>Select Frequency</label>
+                                                <select class="form-control select2 pl-2 "  name="frequency_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;">
+                                                    <option value="" hidden>-- Select Frequency--</option>
+                                                    <option value="One In a day" > One In a day </option>
+                                                    <option value="Two time  In a day" > Two time  In a day </option>
+                                                    <option value="Three time In a day" > Three time In a day </option>
+                                                    <option value="Four time In a day" > Four time In a day </option>
+                                                    <option value="Once in 2 day" > Once in 2 day </option>
+                                                    <option value="Once in 3 day" > Once in 3 day </option>
+                                                    <option value="Once in 4 day" > Once in 4 day </option>
+                                                    <option value="Once in 5 day" > Once in 5 day </option>
+                                                    <option value="Once in 6 day" > Once in 6 day </option>
+                                                    <option value="Once in a week" > Once in a week </option>
+                                                </select>
+                                            </div>
+                                            <!--Second data end [Frequency select end here]-->
+
+                                            
+                                            <!--Third data [Note select start] -->
+                                            <div class="col-md-3">
+                                                <label>Select Note</label>
+                                                <select class="form-control select2 pl-2 "  name="note_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;">
+                                                    <option value="" hidden>-- Select Note--</option>
+                                                    <option value="One In a day" > One In a day </option>
+                                                    <option value="Two time  In a day" > Two time  In a day </option>
+                                                    <option value="Three time In a day" > Three time In a day </option>
+                                                    <option value="Four time In a day" > Four time In a day </option>
+                                                    <option value="Once in 2 day" > Once in 2 day </option>
+                                                    <option value="Once in 3 day" > Once in 3 day </option>
+                                                    <option value="Once in 4 day" > Once in 4 day </option>
+                                                    <option value="Once in 5 day" > Once in 5 day </option>
+                                                    <option value="Once in 6 day" > Once in 6 day </option>
+                                                    <option value="Once in a week" > Once in a week </option>
+                                                </select>
+                                            </div>
+                                            <!--Third data end [Note select end here]-->
+
+                                            <!---fouth start here [button] -->
+                                           <div class="col-md-1">
+                                                <!--addon button start here-->
+                                            <div class="input-group-addon mt-3" style="border: none"> 
+                                                <a href="javascript:void(0)" class="btn btn-success addMore" ><span class="glyphicon glyphicon glyphicon-plus" aria-hidden="true"></span> Add</a>
+                                            </div>
+                                            <!--addon button Ends here-->
+                                          </div> 
+                                           <!--fouth end here[button]-->
+                                           
+                                        </div>
                                     </div>
+                                    <!--form group one end here-->
+
+                                     {{-- <!--form Group Two start here-->
+                                    <div class="form-group fieldGroupCopy" style="display: none;">
+                                        <div class="input-group">
+                                            <!--first data [medicine select start] -->
+                                            <div class="col-md-4">
+                                                <label>Select Medicines</label>
+                                                <select class="form-control select pl-2 "  name="medicine_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;"> 
+                                                    <option value="" hidden>-- Select Medicine--</option>
+                                                    @foreach ($medicineData as $meditem)
+                                                    <option value="{{ $meditem->medicine_name }}">{{ $meditem->medicine_name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <!--first data end [medicine select end here]-->
+
+                                            <!--Second data [Frequency select start] -->
+                                            <div class="col-md-4">
+                                                <label>Select Frequency</label>
+                                                <select class="form-control select pl-2 "  name="frequency_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;">
+                                                    <option value="" hidden>-- Select Frequency--</option>
+                                                    <option value="One In a day" > One In a day </option>
+                                                    <option value="Two time  In a day" > Two time  In a day </option>
+                                                    <option value="Three time In a day" > Three time In a day </option>
+                                                    <option value="Four time In a day" > Four time In a day </option>
+                                                    <option value="Once in 2 day" > Once in 2 day </option>
+                                                    <option value="Once in 3 day" > Once in 3 day </option>
+                                                    <option value="Once in 4 day" > Once in 4 day </option>
+                                                    <option value="Once in 5 day" > Once in 5 day </option>
+                                                    <option value="Once in 6 day" > Once in 6 day </option>
+                                                    <option value="Once in a week" > Once in a week </option>
+                                                </select>
+                                            </div>
+                                            <!--Second data end [Frequency select end here]-->
+
+                                            
+                                            <!--Third data [Frequency select start] -->
+                                            <div class="col-md-3">
+                                                <label>Select Note</label>
+                                                <select class="form-control select pl-2 "  name="note_prescription[]" data-placeholder="Select a Medicine"
+                                                        style="width: 100%;">
+                                                    <option value="" hidden>-- Select Note--</option>
+                                                    <option value="One In a day" > One In a day </option>
+                                                    <option value="Two time  In a day" > Two time  In a day </option>
+                                                    <option value="Three time In a day" > Three time In a day </option>
+                                                    <option value="Four time In a day" > Four time In a day </option>
+                                                    <option value="Once in 2 day" > Once in 2 day </option>
+                                                    <option value="Once in 3 day" > Once in 3 day </option>
+                                                    <option value="Once in 4 day" > Once in 4 day </option>
+                                                    <option value="Once in 5 day" > Once in 5 day </option>
+                                                    <option value="Once in 6 day" > Once in 6 day </option>
+                                                    <option value="Once in a week" > Once in a week </option>
+                                                </select>
+                                            </div>
+                                            <!--Third data end [Frequency select end here]-->
+
+                                            <!--fouth [Button] start here -->
+                                           <div class="col-md-1">
+                                                <!--addon button start here-->
+                                            <div class="input-group-addon mt-3" style="border: none"> 
+                                                <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
+                                            </div>
+                                            <!--addon button Ends here-->
+                                          </div> 
+                                           <!--fouth [button] end here-->
+                                        </div>
+                                    </div>
+                                    <!--form group Two end here--> --}}
+
                                 </div> <!-- /.col -->
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+                                {{-- Experimental zone --}}
+
 
 
 
@@ -167,6 +324,7 @@
                                <input type="submit" class="btn btn-rounded btn-info" value="Submit">
                            </div>
                        </form><!--form-->
+
    
                    </div>
                    <!-- /.col -->
@@ -176,6 +334,87 @@
                <!-- /.box-body -->
              </div>
              <!-- /.box -->
+
+             
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+            <!--form Group Two start here-->
+            <div class="form-group fieldGroupCopy"  style="display: none;">
+                            <div class="input-group">
+                                <!--first data [medicine select start] -->
+                                <div class="col-md-4">
+                                    <label>Select Medicines</label>
+                                    <select class="form-control select pl-2 "  name="medicine_prescription[]" data-placeholder="Select a Medicine"
+                                            style="width: 100%;"> 
+                                        <option value="" hidden>-- Select Medicine--</option>
+                                        @foreach ($medicineData as $meditem)
+                                        <option value="{{ $meditem->medicine_name }}">{{ $meditem->medicine_name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <!--first data end [medicine select end here]-->
+
+                                <!--Second data [Frequency select start] -->
+                                <div class="col-md-4">
+                                    <label>Select Frequency</label>
+                                    <select class="form-control select pl-2 "  name="frequency_prescription[]" data-placeholder="Select a Medicine"
+                                            style="width: 100%;">
+                                        <option value="" hidden>-- Select Frequency--</option>
+                                        <option value="One In a day" > One In a day </option>
+                                        <option value="Two time  In a day" > Two time  In a day </option>
+                                        <option value="Three time In a day" > Three time In a day </option>
+                                        <option value="Four time In a day" > Four time In a day </option>
+                                        <option value="Once in 2 day" > Once in 2 day </option>
+                                        <option value="Once in 3 day" > Once in 3 day </option>
+                                        <option value="Once in 4 day" > Once in 4 day </option>
+                                        <option value="Once in 5 day" > Once in 5 day </option>
+                                        <option value="Once in 6 day" > Once in 6 day </option>
+                                        <option value="Once in a week" > Once in a week </option>
+                                    </select>
+                                </div>
+                                <!--Second data end [Frequency select end here]-->
+
+                                
+                                <!--Third data [Frequency select start] -->
+                                <div class="col-md-3">
+                                    <label>Select Note</label>
+                                    <select class="form-control select pl-2 "  name="note_prescription[]" data-placeholder="Select a Medicine"
+                                            style="width: 100%;">
+                                        <option value="" hidden>-- Select Note--</option>
+                                        <option value="One In a day" > One In a day </option>
+                                        <option value="Two time  In a day" > Two time  In a day </option>
+                                        <option value="Three time In a day" > Three time In a day </option>
+                                        <option value="Four time In a day" > Four time In a day </option>
+                                        <option value="Once in 2 day" > Once in 2 day </option>
+                                        <option value="Once in 3 day" > Once in 3 day </option>
+                                        <option value="Once in 4 day" > Once in 4 day </option>
+                                        <option value="Once in 5 day" > Once in 5 day </option>
+                                        <option value="Once in 6 day" > Once in 6 day </option>
+                                        <option value="Once in a week" > Once in a week </option>
+                                    </select>
+                                </div>
+                                <!--Third data end [Frequency select end here]-->
+
+                                <!--fouth [Button] start here -->
+                               <div class="col-md-1">
+                                    <!--addon button start here-->
+                                <div class="input-group-addon mt-3" style="border: none"> 
+                                    <a href="javascript:void(0)" class="btn btn-danger remove"><span class="glyphicon glyphicon glyphicon-remove" aria-hidden="true"></span> Remove</a>
+                                </div>
+                                <!--addon button Ends here-->
+                              </div> 
+                               <!--fouth [button] end here-->
+                            </div>
+            </div>
+             <!--form group Two end here-->
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+            {{-- Experimental zone --}}
+
+             
    
         </section>
            <!-- /.content -->
@@ -187,51 +426,31 @@
     </div>
 </div>
 <!-- /.content-wrapper -->
-{{-- <script type="text/javascript">
-	$(document).ready(function(){
-		$('#image').change(function(e){
-			var reader = new FileReader();
-			reader.onload = function(e){
-				$('#showImage').attr('src',e.target.result);
-			}
-			reader.readAsDataURL(e.target.files['0']);
-		});
-	});
-</script> --}}
+
 
 <script>
-    let fileInput = document.getElementById("file-input");
-    let imageContainer = document.getElementById("images");
-    let numOfFiles = document.getElementById("num-of-files");
+    $(document).ready(function(){
+    //group add limit
+    var maxGroup = 100;
+    
+    //add more fields group
+    $(".addMore").click(function(){
+        if($('body').find('.fieldGroup').length < maxGroup){
+            var fieldHTML = '<div class="form-group fieldGroup">'+$(".fieldGroupCopy").html()+'</div>';
+            $('body').find('.fieldGroup:last').after(fieldHTML);
+            $(this).prop('disabled', false);
 
-    function preview(){
-        imageContainer.innerHTML = "";
-        numOfFiles.textContent = `${fileInput.files.length} Files Selected`;
-
-        for(i of fileInput.files){
-            let reader = new FileReader();
-            let figure = document.createElement("figure");
-            let figCap = document.createElement("figcaption");
-            figCap.innerText = i.name;
-            figure.appendChild(figCap);
-            reader.onload=()=>{
-                let img = document.createElement("img");
-                img.classList.add('multi-img')
-                img.setAttribute("src",reader.result);
-                figure.insertBefore(img,figCap);
-
-            }
-            imageContainer.appendChild(figure);
-            reader.readAsDataURL(i);
+        }else{
+            alert('Maximum '+maxGroup+' groups are allowed.');
         }
-    }
-</script>
-
-{{-- <script type="text/javascript">
-    $(document).ready(function() {
-       $('.ckeditor').ckeditor();
     });
-</script> --}}
+    
+    //remove fields group
+    $("body").on("click",".remove",function(){ 
+        $(this).parents(".fieldGroup").remove();
+    });
+});
+</script>
 
 
 

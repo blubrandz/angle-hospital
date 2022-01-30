@@ -48,6 +48,9 @@ class manageDoctorPrescriptionController extends Controller
         $data->patientphonenumber_prescription = $request->patientphonenumber_prescription ;
         $data->doctor_detailprescription = $request->doctor_detailprescription ;
         $data->medicine_prescription = $request->medicine_prescription ;
+        $data->frequency_prescription = $request->frequency_prescription ;
+        $data->note_prescription = $request->note_prescription ;
+
         $data->nextapoitment_prescription = $request->nextapoitment_prescription ;
         $data->patientappoitment_id = $request->patientappoitment_id ;
         $data->save() ;
@@ -70,7 +73,10 @@ class manageDoctorPrescriptionController extends Controller
     //View Details of prescrptions
     public function ViewDetailsOFPrescriptions($id) {
         $data = doctor_prescription::find($id) ;
-        return view('doctor_dashboard.doctor_prescription.view_prescriptiondetails' , compact(['data'])) ;
+
+        
+        
+        return view('doctor_dashboard.doctor_prescription.view_prescriptiondetails' , compact(['data' ])) ;
     }
 
     //Edit Doctor Prescription here
@@ -78,7 +84,9 @@ class manageDoctorPrescriptionController extends Controller
         $data = doctor_prescription::find($id) ;
         $id = Auth::user()->id ;
         $user = User::find($id) ;
-        return view('doctor_dashboard.doctor_prescription.edit_prescriptions' , compact([  'user' , 'data'])) ;
+        $medicineData = DB::table('manage_medicines')->orderBy('medicine_name')->get();
+
+        return view('doctor_dashboard.doctor_prescription.edit_prescriptions' , compact([  'user' , 'data' , 'medicineData'])) ;
     }
 
     //Update Doctor Prescriptions detais here
@@ -93,6 +101,9 @@ class manageDoctorPrescriptionController extends Controller
         $data->patientphonenumber_prescription = $request->patientphonenumber_prescription ;
         $data->doctor_detailprescription = $request->doctor_detailprescription ;
         $data->medicine_prescription = $request->medicine_prescription ;
+        $data->frequency_prescription = $request->frequency_prescription ;
+        $data->note_prescription = $request->note_prescription ;
+
         $data->nextapoitment_prescription = $request->nextapoitment_prescription ;
         $data->save() ;
         $notification = array(
@@ -109,5 +120,22 @@ class manageDoctorPrescriptionController extends Controller
         
         $allData = doctor_prescription::latest()->where('patientname_prescription' , $data->username_timeslot)->where('patientemail_prescription' , $data->useremail_timeslot)->get() ;
         return view('doctor_dashboard.doctor_prescription.view_previoushistorypage' , compact(['allData'])) ;
+    }
+
+    //User Based Prescription view view_userbasedprescription
+    public function UserBasedPrescriptionVIew() {
+        $data = User::all()->where('usertype' , 'user') ;
+        return view('doctor_dashboard.doctor_prescription.view_userbasedprescription' , compact(['data'])) ;
+    }
+
+    //User BAsed Details Prescriptions View
+    public function UserBasedPrescriptionDetailsVIew($id) {
+        $userdata = User::find($id) ;
+        
+        $authid = Auth::user()->id ;
+        $user = User::find($authid) ;
+
+        $data = doctor_prescription::latest()->where('doctorname_prescription' , $user->name)->where('doctoremail_prescription' , $user->email)->where('patientname_prescription' , $userdata->name)->where('patientemail_prescription' , $userdata->email)->get() ;
+        return view('doctor_dashboard.doctor_prescription.view_allprescriptions' , compact(['data'])) ;
     }
 }

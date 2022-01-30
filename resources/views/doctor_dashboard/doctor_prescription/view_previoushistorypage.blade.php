@@ -13,10 +13,8 @@
     <div class="container-full">
       <!-- Content Header (Page header) -->
         
-
-      <!-- Main content -->
-
-      @foreach ($allData as $key=>$data)
+        @if($allData->count() > 0)
+         @foreach ($allData as $key=>$data)
       <section class="invoice printableArea">
           
         <!-- title row -->
@@ -121,9 +119,15 @@
 
         
           
-  </section>
-
+      </section>
       @endforeach
+    @else
+        <h4 class="bg-danger text-white p-1 text-center">no Previous History Vailable</h4>
+    @endif
+
+      <!-- Main content -->
+
+     
 
       <!-- /.content -->
     </div>

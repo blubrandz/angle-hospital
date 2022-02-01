@@ -138,4 +138,15 @@ class manageDoctorPrescriptionController extends Controller
         $data = doctor_prescription::latest()->where('doctorname_prescription' , $user->name)->where('doctoremail_prescription' , $user->email)->where('patientname_prescription' , $userdata->name)->where('patientemail_prescription' , $userdata->email)->get() ;
         return view('doctor_dashboard.doctor_prescription.view_allprescriptions' , compact(['data'])) ;
     }
+
+    //view all history of patient 
+    public function ViewAllHistoryOFPatientOnAllApooitment($id) {
+        $userid = doctor_prescription::find($id) ;
+        $authid = Auth::user()->id ;
+        $user = User::find($authid) ;
+
+        $allData = doctor_prescription::latest()->where('doctorname_prescription' , $user->name)->where('doctoremail_prescription' , $user->email)->where('patientname_prescription' , $userid->patientname_prescription)->where('patientemail_prescription' , $userid->patientemail_prescription)->get() ;
+        return view('doctor_dashboard.doctor_prescription.view_previoushistorypage' , compact(['allData'])) ;
+
+    }
 }

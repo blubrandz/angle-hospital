@@ -7,6 +7,12 @@
     
 @endphp
 
+<style>
+  @media print {
+  pre, blockquote {page-break-inside: avoid;}
+}
+</style>
+
  <!-- Content Wrapper. Contains page content -->
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -28,30 +34,45 @@
             </div>
           </div>
           
-          <div class="col-12">
-            <div class="">  <!-- class ="page-header" -->
-              <h2 class="d-inline"><span class="font-size-30"> <img src="{{asset('backend/images/logo/logo.png')}}" style="width: 20%" alt=""> </span></h2>
-              <div class="pull-right text-right">
-                  <h3 id="datedatas">  </h3> <!--date here-->
-              </div>	
+          <div class="col-12  pt-4 pb-4 mb-5 bg-primary pl-4" >
+            <div class="row">
+              <div class="col-10">
+                <h2 class="d-inline">
+                  <span class="font-size-50 text-center"> Angle Fertility Hospital</span>
+                </h2>
+                <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sit </h4>
+                <h3> www.xyz.com / www.youtube.com </h3>
+              </div>
+              <div class="col-2">
+                <img  src="{{asset('backend/images/logo/logo.png')}}" style="width: 80%" alt="">
+              </div>
             </div>
-          </div>
-          <!-- /.col -->
+        </div>
+    <!-- /.col -->
         </div>
 
-        <!-- info row -->
-        <div class="row invoice-info">
-          <div class="col-md-12 ">
-            {{-- <strong><h5>Doctor Details</h5></strong>	 --}}
-            <address>
-              <strong class="text-blue font-size-24">Doctor Details</strong><br>
-              <strong class="d-inline">Doctor Name: Dr.{{ $data->doctorname_prescription }} </strong><br>
-              <strong>Phone: (00) 123-456-7890 <br>
-                 Email: {{ $data->doctoremail_prescription }}</strong>  
-            </address>
-          </div>
-        </div>
-        <!-- /.row -->
+            <!-- info row -->
+            <div class="row invoice-info text-dark font-size-18" style="border-top:5px solid #b4b8bf;border-bottom:5px solid #b4b8bf;margin-top:40px; padding:10px 0px ; ">
+              <div class="col-8 ">
+                {{-- <strong><h5>Doctor Details</h5></strong>	 --}}
+                <address class="mt-5 ">
+                  <strong class="text-blue font-size-24">Doctor Details</strong><br>
+                  <strong class="d-inline ">Doctor Name: <span style="color: #14bef0">Dr.{{ $data->doctorname_prescription }}</span> </strong><br>
+                  <strong>Phone: (00) 123-456-7890 <br>
+                     Email: {{ $data->doctoremail_prescription }}</strong>  
+                </address>
+              </div>
+              <div class="col-4 float text-right ">
+                {{-- <strong><h5>Doctor Details</h5></strong>	 --}}
+                <address class="mt-5 ">
+                  <strong class="text-blue font-size-24">Schedule Details</strong><br>
+                  <strong class="d-inline">Appoitment Date: {{ $data->patientapoitmentdate_prescription }} </strong><br>
+                  <strong class="d-inline">TimeSlot : {{ $data->patientslot_prescription }} </strong><br>
+
+                </address>
+              </div>
+            </div>
+            <!-- /.row -->
 
 
         <!-- info row -->
@@ -91,11 +112,58 @@
             <address>
               <strong class="text-blue font-size-24">Medicines</strong><br>
               
-              {{-- {{ $data->medicine_prescription }} --}}
-              @foreach ($data->medicine_prescription as $key=>$item)
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$key+1}}. {{ $item }}
-              <br>
-              @endforeach
+              <div class="row mt-3 ml-5"> 
+                <div class="col-md-3 m-0 p-0">
+                  <div class="list-group">
+                    <a  class="list-group-item list-group-item-action active">
+                      Medicine Name
+                    </a>
+                    
+                    @empty($data->medicine_prescription)
+                    <span class="list-group-item list-group-item-action disabled"> N/A </span>
+                    @else
+                    @foreach ($data->medicine_prescription as $item)
+                    <span class="list-group-item list-group-item-action disabled"> {{ $item }} </span>
+                    @endforeach
+                    @endempty
+                  </div>
+                </div>
+
+                <div class="col-md-4 m-0 p-0">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                      Frequency
+                    </a>
+                    
+                    @empty($data->frequency_prescription)
+                    <span class="list-group-item list-group-item-action disabled"> N/A </span>
+                    @else
+                    @foreach ($data->frequency_prescription as $freq)
+                    <span class="list-group-item list-group-item-action disabled"> {{ $freq }} </span>
+                    @endforeach
+                    @endempty
+                   
+                  </div>
+                </div>
+
+                <div class="col-md-4 m-0 p-0">
+                  <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                      Note
+                    </a>
+                    
+                    @empty($data->note_prescription)
+                    <span class="list-group-item list-group-item-action disabled"> N/A </span>
+                    @else
+                    @foreach ($data->note_prescription as $note)
+                    <span class="list-group-item list-group-item-action disabled"> {{ $note }} </span>
+                    @endforeach
+                    @endempty
+                  </div>
+                </div>
+                
+
+              </div>
               
             </address>
           </div>
@@ -116,6 +184,30 @@
           </div>
         </div>
         <!-- /.row -->
+
+            <!-- info row -->
+            <div class="row invoice-info text-dark font-size-18" style="border-top:5px solid #b4b8bf;border-bottom:5px solid #b4b8bf;margin-top:40px; padding:10px 0px ; ">
+              <div class="col-8 ">
+                {{-- <strong><h5>Doctor Details</h5></strong>	 --}}
+                <address class="mt-5 ">
+                  <strong class="text-blue font-size-24">Patient Details</strong><br>
+                  <strong class="d-inline">Patient Name: {{ $data->patientname_prescription }} </strong><br>
+                  <strong>Phone: {{ $data->patientphonenumber_prescription }} <br> 
+                    Patient Email: {{ $data->patientemail_prescription }}</strong>  <br>
+                </address>
+              </div>
+              <div class="col-4 float text-right ">
+                {{-- <strong><h5>Doctor Details</h5></strong>	 --}}
+                <address class="mt-5 ">
+                  <strong class="text-blue font-size-24">Schedule Details</strong><br>
+                  <strong class="d-inline">Appoitment Date: {{ $data->patientapoitmentdate_prescription }} </strong><br>
+                  <strong class="d-inline">TimeSlot : {{ $data->patientslot_prescription }} </strong><br>
+
+                </address>
+              </div>
+            </div>
+            <!-- /.row -->
+
 
         
           

@@ -488,7 +488,8 @@ Route::prefix('doctorprescription')->group( function() {
     //user based view all the prescriptions
     Route::get('/userbasedprescriptiondetails/{id}' , [manageDoctorPrescriptionController::class , 'UserBasedPrescriptionDetailsVIew'])->name('doctorprescription.userbasedprescriptiondetails') ;
 
-
+    //view patient full history here
+    Route::get('/viewpatientfullhistory/{id}' , [manageDoctorPrescriptionController::class , 'ViewAllHistoryOFPatientOnAllApooitment'])->name('doctorprescription.viewpatientfullhistory') ;
 
 
 }) ;

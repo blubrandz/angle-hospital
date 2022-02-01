@@ -49,10 +49,13 @@
                                <td>
                                 <a class="btn btn-info" href=" {{Route('doctorprescription.viewalldetails',$item->id)}}" ><i class="fa fa-eye"></i> &nbsp; View Details</a>
                                 &nbsp;&nbsp;
+                                <a class="btn btn-danger" href=" {{Route('doctorprescription.viewpatientfullhistory',$item->id)}}" ><i class="fa fa-eye"></i> &nbsp; View Full History</a>
+                                &nbsp;&nbsp;
+
                                 <a class="btn btn-warning" href=" {{Route('doctorprescription.editprescription',$item->id)}}" ><i class="fa fa-edit"></i> &nbsp;  Edit Details</a>
                                 &nbsp;&nbsp;
 
-                                <a class="btn btn-danger" href=" {{Route('doctorday.delete',$item->id)}}" id="delete"><i class="fa fa-trash"></i> &nbsp;Delete</a>
+                                {{-- <a class="btn btn-danger" href=" {{Route('doctorprescription.delete',$item->id)}}" id="delete"><i class="fa fa-trash"></i> &nbsp;Delete</a> --}}
                             </td>
                           </tr>
                         @endforeach

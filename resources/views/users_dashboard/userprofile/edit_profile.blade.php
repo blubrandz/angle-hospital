@@ -32,7 +32,7 @@
                                     <div class="form-group">
                                         <h5>User Name<span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="name" class="form-control" value=" {{$editData->name}} " required="" aria-invalid="false"> </div>
+                                            <input type="text" name="name" class="form-control" readonly value=" {{$editData->name}} " required="" aria-invalid="false"> </div>
                                     </div>
                                 </div><!--col-6 Ended here-->
 
@@ -40,7 +40,7 @@
                                     <div class="form-group">
                                         <h5>User Email<span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="email" name="email" class="form-control" value=" {{$editData->email}} " required="" aria-invalid="false"> </div>
+                                            <input type="email" name="email" class="form-control" readonly value=" {{$editData->email}} " required="" aria-invalid="false"> </div>
                                     </div>
                                 </div><!--col-6 Ended here-->
                             </div>
@@ -88,84 +88,7 @@
                                     </div>
                                 </div><!--col-6 Ended here-->
 
-                                <!---******NEW DATA **** -->
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>Date Of Birth <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="date" name="birth_date" class="form-control"  value= {{$editData->birth_date}} > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>Your Gmail Address <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="gmail_address" class="form-control" value= "{{$editData->gmail_address}}">
-                                         </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-                                
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>Your Facebook Profile <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="facebook_profile" class="form-control" value="{{$editData->facebook_profile}}" > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>Your Instagram Profile <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="instagram_profile" class="form-control" value="{{$editData->instagram_profile}}" > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>Your linkdine Profile <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="linkdine_profile" class="form-control" value="{{$editData->linkdine_profile}}" > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>How you hear about our party <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <select name="hear_about_party" id="hear_about_party" required  class="form-control">
-                                                <option value="" selected="" disabled>---Select Any---</option>
-                                                <option value="Friends" {{ $editData->hear_about_party == "Friends" ? "Selected": "" }} > Friends </option>
-                                                <option value="Newspaper" {{ $editData->hear_about_party == "Newspaper" ? "Selected": "" }} > Newspaper </option>
-                                                <option value="Facebook" {{ $editData->hear_about_party == "Facebook" ? "Selected": "" }} > Facebook </option>
-                                                <option value="Instagram" {{ $editData->hear_about_party == "Instagram" ? "Selected": "" }} > Instagram </option>
-                                                <option value="Internet-search" {{ $editData->hear_about_party == "Internet-search" ? "Selected": "" }} > Internet-search </option>
-                                                <option value="Blog" {{ $editData->hear_about_party == "Blog" ? "Selected": "" }} > Blog </option>
-                                                <option value="LBB" {{ $editData->hear_about_party == "LBB" ? "Selected": "" }} > LBB </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>What are your expections from aragma? <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="expectation_from_aragma" value="{{$editData->expectation_from_aragma}}" class="form-control"  > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-
-                                <div class="col-md-6"><!--col-6 stared here-->
-                                    <div class="form-group">
-                                        <h5>What is Your Tallent ? <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="user_tallent" class="form-control" value="{{$editData->user_tallent}}"  > </div>
-                                    </div>
-                                </div><!--col-6 Ended here-->
-                                <!--*****new data end here**--->
-                                
+                                                                
 
                                 <div class="col-md-6"><!--col-6 stared here-->
                                     <div class="form-group">

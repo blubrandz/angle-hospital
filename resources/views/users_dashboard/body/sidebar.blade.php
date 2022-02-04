@@ -34,7 +34,7 @@
 		
         <li class="treeview {{ ($prefix == '/userprofile')?"active":"" }} ">
             <a href="#">
-              <i data-feather="mail"></i> <span>Manage Your Profile</span>
+              <i data-feather="user"></i> <span>Manage Your Profile</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-right pull-right"></i>
               </span>
@@ -50,7 +50,7 @@
 
       <li class="treeview {{ ($prefix == '/patientappointment')?"active":"" }}"> 
         <a href="#">
-          <i data-feather="mail"></i> <span>Manage Appointment</span>
+          <i data-feather="clock"></i> <span>Manage Appointment</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
           </span>
@@ -61,15 +61,15 @@
         </ul>
       </li>
 
-      <li class="treeview">
+      <li class="treeview {{ ($prefix == '/patientprescription')?"active":"" }}">
         <a href="#">
-          <i data-feather="mail"></i> <span>Your Prescription</span>
+          <i data-feather="archive"></i> <span>Prescriptions </span>
           <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="mailbox_compose.html"><i class="ti-more"></i>View prescription</a></li>
+          <li><a href="{{ route('patientprescription.viewallprescription') }}"><i class="ti-more"></i>View all prescription</a></li>
         </ul>
       </li>
 

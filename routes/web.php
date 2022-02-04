@@ -18,6 +18,7 @@ use App\Http\Controllers\admin\manageDoctorSpecilityController ;
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
 use App\Http\Controllers\patient\ManagePatientAppointmentController ;
+use App\Http\Controllers\patient\PatientManagePatientPrescriptionController ;
 //Doctor Dashboard
 use App\Http\Controllers\doctor\manageDoctorDaysController ;
 use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
@@ -310,6 +311,7 @@ Route::prefix('patientappointment')->group( function() {
 
 
 });
+    //ajax
     //AJAX DATA[ geting the appointment dated in dropdown]   
     Route::post('getpatient_doctordate' , [ManagePatientAppointmentController::class , 'GetDateManageAjaxData'])->name('getpatient_doctordate') ;
 
@@ -321,7 +323,22 @@ Route::prefix('patientappointment')->group( function() {
 
     //Update AJAX DATA [getiing appointment time in dropdown for patient]
     Route::post('updategetpatient_doctortime' , [ManagePatientAppointmentController::class , 'UpdateGetTimeManageAjaxData'])->name('updategetpatient_doctortime') ;
+    //ajax end
+    //ajax end
+    //ajax end
 
+//
+// PATIENT PRESCRIPTION DATA
+//
+Route::prefix('patientprescription')->group( function() {
+    //viewallprescription 
+    Route::get('/viewallprescription' , [PatientManagePatientPrescriptionController::class , 'viewAllDoctorsPrescrions'])->name('patientprescription.viewallprescription') ;
+
+    //patientprescriptiondetail
+    Route::get('/patientprescriptiondetail/{id}' , [PatientManagePatientPrescriptionController::class , 'viewAllDoctorsPrescrionsInDetail'])->name('patientprescription.patientprescriptiondetail') ;
+
+
+}) ;
 
 
     

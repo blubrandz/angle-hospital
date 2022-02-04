@@ -20,7 +20,7 @@
 
            <div class="box">
               <div class="box-header with-border">
-                <h3 class="box-title"> Yours Appointments </h3>
+                <h3 class="box-title"> {{ Str::title($user->name) }} Prescriptions </h3>
                 <a href=" {{ route('patientappointment.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Book An Appoitment </a>
               </div>
               <!-- /.box-header -->
@@ -30,10 +30,11 @@
                       <thead>
                           <tr>
                               <th width="5%">SL</th>
-                              <th> Your Name </th>
+                              <th> your Name </th>
                               <th> Doctor name </th>
                               <th> Date of Appointment </th>
                               <th> Timeslot </th>
+                              <th> Next appoitment </th>
                               <th>Action</th>
                           </tr>
                       </thead>
@@ -41,16 +42,13 @@
                         @foreach ($data as $key => $item)
                           <tr>
                               <td> {{$key+1}} </td>
-                              <td> {{$item->username_timeslot }} </td>
-                              <td> {{$item->pateintappo_doctorname }} </td>
-                              {{-- <td class="rescheduledate"> {{$item->pateintappo_doctordate }} </td> --}}
-                              <td class="rescheduledate"> {{ date('j F,Y',strtotime($item->pateintappo_doctordate)) }} &nbsp;&nbsp; <b>{{ Str::upper(date('(l)',strtotime($item->pateintappo_doctordate))) }}</b> </td>
-
-                              <td> {{$item->pateintappo_doctortimeslot }} </td>
+                              <td> {{$item->patientname_prescription }} </td>
+                              <td> {{$item->doctorname_prescription }} </td>
+                              <td> {{ date('j F,Y',strtotime($item->patientapoitmentdate_prescription)) }} &nbsp;&nbsp; <b>{{ Str::upper(date('(l)',strtotime($item->patientapoitmentdate_prescription))) }}</b> </td>
+                              <td> {{$item->patientslot_prescription }} </td>
+                              <td style="{{ $item->nextapoitment_prescription==null?'color:red;font-weight:bolder':'' }}"> {{ $item->nextapoitment_prescription==null?"No Appointment":$item->nextapoitment_prescription }} </td>
                               <td>
-                                <a class="btn btn-danger" id="rescheduleid" href=" {{Route('patientappointment.rescheduleadd',$item->id)}} "><i class="fa-repeat"></i> &nbsp; Reschedule </a>
-                                {{-- <a class="btn btn-danger rescheduleid"  ><i class="fa-repeat"></i> &nbsp; Reschedule </a> --}}
-
+                                <a class="btn btn-danger"  href=" {{Route('patientprescription.patientprescriptiondetail',$item->id)}} "> View Details </a>
                             </td>
                           </tr>
                         @endforeach

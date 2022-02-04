@@ -30,14 +30,14 @@ class userProfileController extends Controller
         $data->mobile = $request->mobile ;
         $data->address = $request->address ;
         $data->gender = $request->gender ;
-        $data->birth_date = $request->birth_date ;
-        $data->gmail_address = $request->gmail_address ;
-        $data->facebook_profile = $request->facebook_profile ;
-        $data->instagram_profile = $request->instagram_profile ;
-        $data->linkdine_profile = $request->linkdine_profile ;
-        $data->hear_about_party = $request->hear_about_party ;
-        $data->expectation_from_aragma = $request->expectation_from_aragma ;
-        $data->user_tallent = $request->user_tallent ;
+        // $data->birth_date = $request->birth_date ;
+        // $data->gmail_address = $request->gmail_address ;
+        // $data->facebook_profile = $request->facebook_profile ;
+        // $data->instagram_profile = $request->instagram_profile ;
+        // $data->linkdine_profile = $request->linkdine_profile ;
+        // $data->hear_about_party = $request->hear_about_party ;
+        // $data->expectation_from_aragma = $request->expectation_from_aragma ;
+        // $data->user_tallent = $request->user_tallent ;
 
         // $data->image = $request->image ;
         if($request->file('image')) {

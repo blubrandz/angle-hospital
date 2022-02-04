@@ -30,7 +30,9 @@
                         Passed Dates
                     @endif
                 </h3>
-                <a href=" {{ route('doctorday.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add New Appointment Date</a>
+                <a href=" {{ route('doctorday.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add New Appointment Date</a> &nbsp;&nbsp;&nbsp;
+                <a href=" {{ route('doctortimeslots.add') }} " class="btn btn-rounded btn-success md-5" style="float: right"> Add New Time Slot</a>
+
               </div>
               <!-- /.box-header -->
               <div class="box-body">

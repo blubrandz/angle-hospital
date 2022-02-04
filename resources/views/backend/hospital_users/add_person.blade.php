@@ -58,6 +58,20 @@
 
                                 <div class="col-md-12"><!--col-6 stared here-->
                                     <div class="form-group">
+                                        <h5>Select Service <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <select name="doctor_service" id="doctor_specilist"   class="form-control">
+                                                <option value="" hidden> ----Select Service ---- </option>
+                                                @foreach ($dataservice as $service)
+                                                    <option value=" {{ $service->services_name }} ">{{ $service->services_name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><!--col-6 Ended here-->
+
+                                <div class="col-md-12"><!--col-6 stared here-->
+                                    <div class="form-group">
                                         <h5>Name <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="name" class="form-control" required> </div>

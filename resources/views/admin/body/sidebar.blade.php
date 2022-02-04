@@ -74,6 +74,20 @@
           </ul>
         </li>
 
+        <li class="treeview {{ ($prefix == '/services')?'active':'' }}">
+          <a href="#">
+            <i data-feather="globe"></i> <span>Manage Services</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('services.add')}}"><i class="ti-more"></i>Add services</a></li>
+            <li><a href="{{route('services.view')}}"><i class="ti-more"></i>View services</a></li>
+          </ul>
+        </li>
+
+
 
         <li class="treeview {{ ($prefix == '/doctors')?'active':'' }}">
           <a href="#">

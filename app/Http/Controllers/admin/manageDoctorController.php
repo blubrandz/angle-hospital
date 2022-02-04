@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User ;
 use App\Models\speciality ;
+use App\Models\service ;
 
 class manageDoctorController extends Controller
 {
     //adding doctors here
     public function AddDoctor() {
         $data = speciality::all() ;
-        return view('backend.hospital_users.add_person' , compact(['data']));
+        $dataservice = service::all() ;
+        return view('backend.hospital_users.add_person' , compact(['data' , 'dataservice']));
     }
 
     //storing the dcotor data
@@ -25,6 +27,7 @@ class manageDoctorController extends Controller
         $data = new User() ;
         $data->usertype = $request->usertype ;
         $data->doctor_specilist = $request->doctor_specilist;
+        $data->doctor_service = $request->doctor_service ;
         $data->name = $request->name ;
         $data->email = $request->email ;
         $data->password = bcrypt($request->password);
@@ -58,8 +61,9 @@ class manageDoctorController extends Controller
     public function EditDoctors($id) {
         $editData = User::find($id) ;
         $data = speciality::all() ;
+        $dataservice = service::all() ;
 
-        return view('backend.hospital_users.edit_persons' , compact('editData' , 'data')) ;
+        return view('backend.hospital_users.edit_persons' , compact('editData' , 'data' , 'dataservice')) ;
     }
 
     //updating the doctor data here
@@ -67,6 +71,7 @@ class manageDoctorController extends Controller
         $data = User::find($id) ;
         $data->usertype = $request->usertype ;
         $data->doctor_specilist = $request->doctor_specilist ;
+        $data->doctor_service = $request->doctor_service ;
         $data->name = $request->name ;
         $data->email = $request->email ;
         $data->mobile = $request->mobile ;

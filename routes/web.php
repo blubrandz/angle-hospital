@@ -14,6 +14,7 @@ use App\Http\Controllers\admin\manageReceptionController ;
 use App\Http\Controllers\admin\diseaseManagementController ;
 use App\Http\Controllers\admin\diseaseCatagoryManagmentController ;
 use App\Http\Controllers\admin\manageDoctorSpecilityController ;
+use App\Http\Controllers\admin\manageAdminDoctorServicesController ;
 //patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
@@ -248,6 +249,26 @@ Route::prefix('diseasecatagory')->group(function() {
 
     //view all disease cataogy here
     Route::get('/view' , [diseaseCatagoryManagmentController::class , 'ViewDiseaseCatagory'])->name('diseasecatagory.view') ;
+
+
+}) ;
+
+//
+//MANAGE  SERVICES adminservice
+//  
+Route::prefix('services')->group(function() {
+    //adding Services
+    Route::get('/add' , [manageAdminDoctorServicesController::class , 'addServices'])->name('services.add') ;
+
+    //store the services
+    Route::post('/store' , [manageAdminDoctorServicesController::class , 'StoreServices'])->name('services.store') ;
+
+    //View the services
+    Route::get('/view' , [manageAdminDoctorServicesController::class , 'ViewServices'])->name('services.view') ;
+
+    //delete the services here
+    Route::get('/delete/{id}' , [manageAdminDoctorServicesController::class , 'DeleteServices'])->name('services.delete') ;
+
 
 
 }) ;

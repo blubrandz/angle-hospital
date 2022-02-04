@@ -30,7 +30,7 @@
                               <th>Role</th>
                               <th>Name</th>
                               <th> Specility </th>
-
+                              <th> Services </th>
                               <th>Email</th>
                               <th> Phone number </th>
                               <th> Address </th>
@@ -70,7 +70,7 @@
                               </td>
                               <td style="font-weight: bold"> {{Str::title($user->name) }} </td>
                               <td> {{$user->doctor_specilist}} </td>
-
+                              <td style="{{ $user->doctor_service==null?'color:red':'' }}"> {{ $user->doctor_service==null?"N/A":$user->doctor_service }} </td>
                               <td> {{$user->email }} </td>
                               <td> {{$user->mobile }} </td>
                               <td> {{$user->address == null?"N/A":$user->address }} </td>

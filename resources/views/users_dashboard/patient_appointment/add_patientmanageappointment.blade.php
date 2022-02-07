@@ -113,6 +113,14 @@
                                             <input type="text" name="patientappo_phonenumber" class="form-control"   aria-invalid="false"> </div>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12"><!--col-6 stared here-->
+                                        <div class="form-group">
+                                            {{-- <h5>Enter Your Phone Number </h5> --}}
+                                            <div class="controls">
+                                                <input type="text" name="patientappo_bookingstatus" value="1" class="form-control"   aria-invalid="false" hidden> </div>
+                                            </div>
+                                        </div>
                                 </div><!--col-6 Ended here-->
                               </div>
                               <!--row end-->

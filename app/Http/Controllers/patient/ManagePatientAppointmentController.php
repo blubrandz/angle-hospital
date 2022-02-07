@@ -11,6 +11,7 @@ use App\Models\appointment_timeslot ;
 use App\Models\patient_appointment ;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Queue\Events\Looping;
+use Illuminate\Support\Facades\DB ;
 
 use function PHPUnit\Framework\returnValue;
 
@@ -29,9 +30,9 @@ class ManagePatientAppointmentController extends Controller
     //AJAX [date down data for date here]
     public function GetDateManageAjaxData(Request $request) {
         $currentDate = date('Y-m-d');
-
         $doctornameid = $request->post('doctornameid') ;
-        $doctordatelist = appointment_date::latest()->where('email_appointmentdate',$doctornameid)->where('date_appointmentdate', '>=' , $currentDate)->get() ;
+        $doctordatelist = appointment_date::all()->where('email_appointmentdate',$doctornameid)->where('date_appointmentdate', '>=' , $currentDate) ;
+
         $html = '<option value="" selected="" disabled>----Select Date----</option>' ;
         foreach ($doctordatelist as $datelistdata) {
             $html.= '<option value="'. $datelistdata->date_appointmentdate .'" > '. $datelistdata->date_appointmentdate .' </option>' ;
@@ -68,9 +69,9 @@ class ManagePatientAppointmentController extends Controller
         foreach($usertabledata as $key=>$item){
             // return $key = $item->email;
 
-            $timeslotdatalist = appointment_timeslot::latest()->where('username_timeslot' , $key=$item->name)->where('useremail_timeslot' , $key=$item->email)->where('selectdate_timeslot',$doctordateid)->get() ;
+            $timeslotdatalist = appointment_timeslot::all()->where('username_timeslot' , $key=$item->name)->where('useremail_timeslot' , $key=$item->email)->where('selectdate_timeslot',$doctordateid) ;
             //exp
-            $patientBookedTimeSlotsData = patient_appointment::latest()->where('pateintappo_doctorname' , $key=$item->email)->where('pateintappo_doctordate', $doctordateid)->get() ;
+            $patientBookedTimeSlotsData = patient_appointment::all()->where('pateintappo_doctorname' , $key=$item->email)->where('pateintappo_doctordate', $doctordateid) ;
             // foreach($patientBookedTimeSlotsData as $key=>$disableSelectData) {
             //     $disableBtnData = $disableSelectData->pateintappo_doctortimeslot ;
             // }
@@ -120,10 +121,10 @@ class ManagePatientAppointmentController extends Controller
         $data->pateintappo_doctordate = $request->pateintappo_doctordate ;
         $data->pateintappo_doctortimeslot = $request->pateintappo_doctortimeslot ;
         $data->patientappo_phonenumber = $request->patientappo_phonenumber ;
-
+        $data->patientappo_bookingstatus = $request->patientappo_bookingstatus ;
         $data->save() ;
         $notification = array(
-            'message' => "Your Appointment at $request->pateintappo_doctordate  with Dr.$request->pateintappo_doctorname Booked succesfully",
+            'message' => "Your Appointment at $request->pateintappo_doctordate Booked succesfully",
             'alert-type' => 'success'
         ) ;
         return redirect()->route('patientappointment.view')->with($notification) ;

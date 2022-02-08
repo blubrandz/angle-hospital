@@ -22,17 +22,11 @@
            <div class="box">
               <div class="box-header with-border">
                 <h3 class="box-title">
-                    @if ($route == "doctormanagement.viewallupcommingSchedules")
-                        All Upcoming Schedules of Doctors
-                    @elseif($route == "doctormanagement.viewallpassedSchedules")
-                    All Passed Schedules of Doctors
-                    @else
-                    All Doctor Schedule 
-                    @endif
+                   All Doctors List
                 </h3>
-                {{-- <a href=" {{ route('doctormanagement.viewalldoctorlist') }} " class="btn btn-rounded btn-success md-5 " style="float: right; margin-left:10px"> View All Doctor List</a> 
                 
-                <a href=" {{ route('doctormanagement.viewall') }} " class="btn btn-rounded btn-success md-5 " style="float: right; margin-left:10px"> View All Schedule</a> 
+
+                {{-- <a href=" {{ route('doctormanagement.viewall') }} " class="btn btn-rounded btn-success md-5 " style="float: right; margin-left:10px"> View All Schedule</a> 
 
                 <a href=" {{ route('doctormanagement.viewallpassedSchedules') }} " class="btn btn-rounded btn-success md-5 " style="float: right; margin-left:10px"> Passeed Schedule</a> 
 
@@ -48,10 +42,8 @@
                               <th width="5%">SL</th>
                               <th> Doctor Name </th>
                               <th> Doctor Email </th>
-                              <th> Patient Name </th>
-                              <th> Patient Email </th>
-                              <th> Date </th>
-                              <th> Timeslot Slot  </th>
+                              <th> Doctor Specilist </th>
+                              <th> Doctor Services </th>
                               <th >Action</th>
                           </tr>
                       </thead>
@@ -59,16 +51,13 @@
                         @foreach ($data as $key => $item)
                           <tr>
                               <td> {{$key+1}} </td>
-                              <td> Dr.{{ Str::title($item->doctorname_prescription) }} </td>
-                              <td> {{$item->doctoremail_prescription }} </td>
-                              <td> {{ Str::title($item->patientname_prescription) }} </td>
-                              <td> {{$item->patientemail_prescription }} </td>
-                              <td> <span class="btn btn-secondary">{{ date('jS F Y' , strToTime($item->patientapoitmentdate_prescription)) }}</span></td>
-                              <td> {{$item->patientslot_prescription }} </td>
+                              <td> {{$item->name }} </td>
+                              <td> {{$item->email  }} </td>
+                              <td style="{{ $item->doctor_specilist==null?'color:red':'' }}"> {{ $item->doctor_specilist==null?"N/A":$item->doctor_specilist }} </td>
+                              <td style="{{ $item->doctor_service==null?'color:red':'' }}"> {{$item->doctor_service==null?"N/A":$item->doctor_service }} </td>
+
                                <td>
-                                <a class="btn btn-info" href=" {{Route('doctorprescriptionmanagement.viewdetails',$item->id)}}">View Full detail</a>
-                                &nbsp;
-                                <a class="btn btn-danger" href=" {{Route('doctorprescriptionmanagement.delete',$item->id)}}" id="delete">Delete</a>
+                                <a class="btn btn-info" href=" {{Route('doctorprescriptionmanagement.viewalldoctorprescriptions',$item->id)}}">View All Prescriptions </a>                                
                             </td>
                           </tr>
                         @endforeach

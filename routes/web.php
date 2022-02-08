@@ -334,6 +334,22 @@ Route::prefix('doctorprescriptionmanagement')->group(function() {
     //view details of doctor prescriptions
     Route::get('/viewdetails/{id}' , [admindoctorPrescriptionManagementController::class , 'ViewFullDetailOfDoctorPrescriptionList'])->name('doctorprescriptionmanagement.viewdetails') ;
 
+    //delete the perticular prescriptions delete
+    Route::get('/delete/{id}' , [admindoctorPrescriptionManagementController::class , 'DeletePrescriptions'])->name('doctorprescriptionmanagement.delete') ;
+
+    //view all prescription based on doctors name viewdoctorslist
+    Route::get('/viewdoctorslist' , [admindoctorPrescriptionManagementController::class , 'ViewAllDoctorLists'])->name('doctorprescriptionmanagement.viewdoctorslist') ;
+
+    //View all prescrption written by doctor viewalldoctorprescriptions
+    Route::get('/viewalldoctorprescriptions/{id}' , [admindoctorPrescriptionManagementController::class , 'ViewAllListOfPrescrptionWriitenByDoctor'])->name('doctorprescriptionmanagement.viewalldoctorprescriptions') ;
+
+    //view all prescrption based on patients viewpatientslist
+    Route::get('/viewpatientslist' , [admindoctorPrescriptionManagementController::class , 'ViewAllPatientLists'])->name('doctorprescriptionmanagement.viewpatientslist') ;
+
+    //View all List of prescription based on patients viewallpatientsprescriptions
+    Route::get('/viewallpatientsprescriptions/{id}' , [admindoctorPrescriptionManagementController::class , 'ViewAllListOfPrescrptionWriitenForPatient'])->name('doctorprescriptionmanagement.viewallpatientsprescriptions') ;
+
+
 }) ;
 
 

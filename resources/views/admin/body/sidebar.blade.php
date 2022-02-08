@@ -183,7 +183,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>View All Prescriptions</a></li>
+            <li><a href="{{route('doctorprescriptionmanagement.viewall')}}"><i class="ti-more"></i>View All Prescriptions</a></li>
             <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Doctors List</a></li>
             <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>View Patient List</a></li>
           </ul>

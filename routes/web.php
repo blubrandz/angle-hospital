@@ -331,6 +331,9 @@ Route::prefix('doctorprescriptionmanagement')->group(function() {
     //view all doctor prescriptions list
     Route::get('/viewall' , [admindoctorPrescriptionManagementController::class , 'ViewAllDoctorManagmentList'])->name('doctorprescriptionmanagement.viewall') ;
 
+    //view details of doctor prescriptions
+    Route::get('/viewdetails/{id}' , [admindoctorPrescriptionManagementController::class , 'ViewFullDetailOfDoctorPrescriptionList'])->name('doctorprescriptionmanagement.viewdetails') ;
+
 }) ;
 
 

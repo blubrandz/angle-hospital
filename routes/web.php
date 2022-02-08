@@ -15,6 +15,9 @@ use App\Http\Controllers\admin\diseaseManagementController ;
 use App\Http\Controllers\admin\diseaseCatagoryManagmentController ;
 use App\Http\Controllers\admin\manageDoctorSpecilityController ;
 use App\Http\Controllers\admin\manageAdminDoctorServicesController ;
+use App\Http\Controllers\admin\manageAdminMedicinesController ;
+use App\Http\Controllers\admin\doctorManagementTimeandDateController ;
+use App\Http\Controllers\admin\admindoctorPrescriptionManagementController ;
 //patient dashboard
 use App\Http\Controllers\doctor\doctorDashboardController ;
 use App\Http\Controllers\doctor\doctorProfileManageController ;
@@ -272,6 +275,65 @@ Route::prefix('services')->group(function() {
 
 
 }) ;
+
+//
+//Manage Admin Medicines here adminmedicine
+//
+Route::prefix('adminmedicine')->group(function() {
+    //add medicines
+    Route::get('/add' , [manageAdminMedicinesController::class , 'AddMedicines'])->name('adminmedicine.add') ;
+
+    //store the medicines in database
+    Route::post('/store' , [manageAdminMedicinesController::class , 'StoreMedicines'])->name('adminmedicine.store') ;
+
+    //view all medicines
+    Route::get('/view' , [manageAdminMedicinesController::class , 'ViewAllMedicines'])->name('adminmedicine.view') ;
+
+    //delete medicine
+    Route::get('/delete/{id}' , [manageAdminMedicinesController::class , 'DeleteMEdicines'])->name('adminmedicine.delete') ;
+
+}) ;
+
+//
+//Doctor Management of his or her time schedules doctormanagement
+//
+Route::prefix('doctormanagement')->group(function() {
+    //View all Date and time of all doctors
+    Route::get('/viewall' , [doctorManagementTimeandDateController::class , 'viewAllDateAndTimeSchedules'])->name('doctormanagement.viewall') ;
+
+    //view all passed schedules viewallpassedSchedules
+    Route::get('/viewallpassedSchedules' , [doctorManagementTimeandDateController::class , 'viewAllPassedSchedules'])->name('doctormanagement.viewallpassedSchedules') ;
+
+    //view all upcomming schedules viewallupcommingSchedules
+    Route::get('/viewallupcommingSchedules' , [doctorManagementTimeandDateController::class , 'viewAllUpcommingSchedules'])->name('doctormanagement.viewallupcommingSchedules') ;
+
+    //view all doctors list viewalldoctorlist
+    Route::get('/viewalldoctorlist' , [doctorManagementTimeandDateController::class , 'viewallDoctorsList'])->name('doctormanagement.viewalldoctorlist') ;
+
+    //View All Doctor All list alllist
+    Route::get('/alllist/{id}' , [doctorManagementTimeandDateController::class , 'ViewAllListOfDOctor'])->name('doctormanagement.alllist') ;
+
+    //view all list of doctor upcomming data viewallupcommingdoctors
+    Route::get('/viewallupcommingdoctors/{id}' , [doctorManagementTimeandDateController::class , 'ViewAllUpcommingListOfDOctor'])->name('doctormanagement.viewallupcommingdoctors') ;
+
+    //view all doctos list of viewallpassdoctors
+    Route::get('/viewallpassdoctors/{id}' , [doctorManagementTimeandDateController::class , 'ViewAllPassedListOfDOctor'])->name('doctormanagement.viewallpassdoctors') ;
+
+    //delete the scheduled of doctors delete
+    Route::get('/delete/{id}' , [doctorManagementTimeandDateController::class , 'DeleteDoctorsSchedules'])->name('doctormanagement.delete') ;
+
+}) ;
+
+//
+//Doctor Prescription Management  doctorprescriptionmanagement
+//
+Route::prefix('doctorprescriptionmanagement')->group(function() {
+    //view all doctor prescriptions list
+    Route::get('/viewall' , [admindoctorPrescriptionManagementController::class , 'ViewAllDoctorManagmentList'])->name('doctorprescriptionmanagement.viewall') ;
+
+}) ;
+
+
 
 
 
@@ -531,24 +593,6 @@ Route::prefix('doctorprescription')->group( function() {
 
 
 }) ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -119,7 +119,7 @@
 
         <li class="treeview {{ ($prefix == '/diseasecatagory')?'active':'' }}">
           <a href="#">
-            <i data-feather="mail"></i> <span>Disease Catagory</span>
+            <i data-feather="grid"></i> <span>Disease Catagory</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
@@ -144,7 +144,51 @@
           </ul>
         </li>
 
-        
+        <li class="header nav-small-cap">MEDICINES SECTION</li>	
+
+        <li class="treeview {{ ($prefix == '/adminmedicine')?'active':'' }}">
+          <a href="#">
+            <i data-feather="plus-circle"></i> <span>Manage Medicines</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('adminmedicine.add')}}"><i class="ti-more"></i>Add Medicine</a></li>
+            <li><a href="{{route('adminmedicine.view')}}"><i class="ti-more"></i>View Medicine</a></li>
+          </ul>
+        </li>
+
+        <li class="header nav-small-cap">DOCTOR MANAGEMENT </li>	
+
+        <li class="treeview {{ ($prefix == '/doctormanagement')?'active':'' }}">
+          <a href="#">
+            <i data-feather="calendar"></i> <span>Date and Timeslot</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{route('doctormanagement.viewall')}}"><i class="ti-more"></i>View all Schedule</a></li>
+            <li><a href="{{route('doctormanagement.viewalldoctorlist')}}"><i class="ti-more"></i>View all Doctors</a></li>
+          </ul>
+        </li>
+
+
+        <li class="treeview {{ ($prefix == '/doctorprescriptionmanagement')?'active':'' }}">
+          <a href="#">
+            <i data-feather="edit-3"></i> <span>Doctor Prescriptions</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>View All Prescriptions</a></li>
+            <li><a href="mailbox_compose.html"><i class="ti-more"></i>View Doctors List</a></li>
+            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>View Patient List</a></li>
+          </ul>
+        </li>
+
 
 
 		  

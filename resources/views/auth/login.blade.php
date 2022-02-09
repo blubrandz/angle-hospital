@@ -45,7 +45,7 @@
 										<div class="input-group-prepend">
 											<span class="input-group-text bg-transparent text-white"><i class="ti-user"></i></span>
 										</div>
-										<input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Username" >
+										<input type="email" id="email" name="email" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Usermail" >
 									</div>
 								</div>
 
@@ -55,13 +55,16 @@
 											<span class="input-group-text  bg-transparent text-white"><i class="ti-lock"></i></span>
 										</div>
 										<input type="password" id="password" name="password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Password">
+										<div class="input-group-addon" onclick="myFunction()">
+											<i class="fa fa-eye" ></i>
+										  </div>
 									</div>
 								</div>
 
 								  <div class="row">
 									<div class="col-6">
 									  <div class="checkbox text-white">
-										<input type="checkbox" id="basic_checkbox_1" >
+										<input type="checkbox"  id="basic_checkbox_1" >
 										<label for="basic_checkbox_1">Remember Me</label>
 									  </div>
 									</div>
@@ -106,3 +109,14 @@
 
 </body>
 </html>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>

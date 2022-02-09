@@ -1,5 +1,5 @@
 <?php
-
+//common controllers
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\backend\UserController;
@@ -29,6 +29,8 @@ use App\Http\Controllers\doctor\manageDoctorTimeSlotController ;
 use App\Http\Controllers\doctor\manageDoctorAppoitmentController ;
 use App\Http\Controllers\doctor\manageDoctorPrescriptionController ;
 use App\Http\Controllers\doctor\medicineManagementDoctorPannelController ;
+//Receptionist Dashboard
+use App\Http\Controllers\receptionist\ReceptionistController ;
 //models
 use App\Models\User ;
 
@@ -622,6 +624,11 @@ Route::get('receptiondashboard', function () {
     return view('reception_dashboard.index');
 
 })->name('receptiondashboard');
+
+//Reception logout functionality here ReceptionistController
+Route::get('/receptionist/logout' , [ReceptionistController::class , 'ReceptionistLogout'])->name('receptionist.logout') ;
+
+
 
 
 

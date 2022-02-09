@@ -65,6 +65,9 @@
 											<span class="input-group-text bg-transparent text-white"><i class="ti-lock"></i></span>
 										</div>
 										<input type="password" id="password" name="password" required autocomplete="new-password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Password">
+										<div class="input-group-addon" onclick="myFunction()">
+											<i class="fa fa-eye" ></i>
+										  </div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -73,6 +76,9 @@
 											<span class="input-group-text bg-transparent text-white"><i class="ti-lock"></i></span>
 										</div>
 										<input type="password" id="password_confirmation" name="password_confirmation" required autocomplete="new-password" class="form-control pl-15 bg-transparent text-white plc-white" placeholder="Retype Password">
+										<div class="input-group-addon" onclick="myFunction2()">
+											<i class="fa fa-eye" ></i>
+										  </div>
 									</div>
 								</div>
 								  <div class="row">
@@ -118,3 +124,25 @@
 	
 </body>
 </html>
+<script>
+	function myFunction() {
+	  var x = document.getElementById("password");
+	  if (x.type === "password") {
+		x.type = "text";
+	  } else {
+		x.type = "password";
+	  }
+	}
+	</script>
+
+	<script>
+	function myFunction2() {
+	  var x = document.getElementById("password_confirmation");
+	  if (x.type === "password") {
+		x.type = "text";
+	  } else {
+		x.type = "password";
+	  }
+	}
+	</script>
+	
